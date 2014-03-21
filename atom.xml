@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Vivek Ganesan]]></title>
-  <link href="http://vivganes.github.io/atom.xml" rel="self"/>
-  <link href="http://vivganes.github.io/"/>
-  <updated>2014-03-21T12:37:49+05:30</updated>
-  <id>http://vivganes.github.io/</id>
+  <link href="http://www.vivekganesan.com/atom.xml" rel="self"/>
+  <link href="http://www.vivekganesan.com/"/>
+  <updated>2014-03-21T12:41:27+05:30</updated>
+  <id>http://www.vivekganesan.com/</id>
   <author>
     <name><![CDATA[Vivek Ganesan]]></name>
     <email><![CDATA[vivek@vivekganesan.com]]></email>
