@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Design and Code to Choose the Husband Using MapReduce - Vivek Ganesan</title>
+  <meta name="author" content="Vivek Ganesan">
+
+  
+  <meta name="description" content="In the last blog post &ldquo;What is MapReduce? &ndash; An Exercise using Activity Based Learning&rdquo;, the methodology of MapReduce was explained &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vivek Ganesan" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21067431-8']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vivekganesan.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="/">
+        <span class="blue_light">
+            Vivek Ganesan
+        </span>
+       
+           <span class="blue_dark">
+             ~A Techie, a Teacher, a blah, blah and a Blah!
+           </span>
+       
+    </a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Design and Code to Choose the Husband Using MapReduce</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-24T10:37:57+05:30" pubdate data-updated="true">Mar 24<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In the last blog post &ldquo;<a href="http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/">What is MapReduce? &ndash; An Exercise using Activity Based Learning</a>&rdquo;, the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem &ldquo;Choosing the Husband&rdquo; explained in the previous blog post.</p>
+
+<h3>Recap</h3>
+
+<p>Remember that there are three phases in the MapReduce methodology.<br/>
+1. Map<br/>
+2. Shuffle &amp; Sort (Which I simply call as &lsquo;Grouping&rsquo;)<br/>
+3. Reduce</p>
+
+<p>Here is a recap of characters in our story.</p>
+
+<p><img class="center" src="/images/character_names.png"></p>
+
+<p>Before getting on to explain the technical design of the solution, let me highlight some important points in the MapReduce methodology.</p>
+
+<ol>
+<li>The input is split into multiple input-splits before being passed to Mappers.</li>
+<li>Each mapper worker is assigned one input-split.</li>
+<li>The Map phase has input format of key,value and output format of key,value.</li>
+<li>The Shuffle &amp; Sort phase has input format of key,value and output format of key,{list of values}</li>
+<li>The Reduce phase has input format of key,{list of values} and output format of key,value</li>
+</ol>
+
+
+<h3>Assumption</h3>
+
+<p>&ldquo;Choosing the Husband&rdquo; problem explained in the previous blog post has images.  We had to identify people from images.  So, we should be writing code for image processing in this blog post, right?  No!  We are going to get rid of that image processing complexity by a convenient assumption.</p>
+
+<p>The assumption is this: We will have two input files, with eight lines each.  Each line would have two words.  Each of these words denote the name of the person identified in the image.</p>
+
+<p>For example, if the first photo contained Jaja and Jojo, the first line of the first file would read the following.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja jojo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Second line denotes the people present in second photo and so on upto the first eight photos.  Thereafter, entries go into the second input file.  Thus, we would end up with two files with eight lines each, each line having exactly two words.</p>
+
+<h3>Key-Value Input?? How?</h3>
+
+<p>If you have not noticed, see that I have mentioned in the &ldquo;Recap&rdquo; section that Map phase has input format of key,value.</p>
+
+<p>Map is the first phase of the MapReduce process.  So, these two files, which we have, with two words in each line, should be the input to the Map phase.  Is this a key,value pair?  Not at all!</p>
+
+<p>MapReduce framework of Hadoop does this for you by doing the following default assignments for each line in the files.<br/>
+<strong>Key</strong> &ndash; Character Position of the starting of the line<br/>
+<strong>Value</strong> &ndash; The actual content of the line</p>
+
+<p>For example, if the first line of the first file contains <code>jaja jojo</code>, then, for the first line (or split),<br/>
+<strong>Key</strong> &ndash; 0<br/>
+<strong>Value</strong> &ndash; <code>jaja jojo</code></p>
+
+<p>If the second line contained <code>jiji jojo</code>, then, for that line(or split), <br/>
+<strong>Key</strong> &ndash; 9<br/>
+<strong>Value</strong> &ndash; <code>jiji jojo</code></p>
+
+<p>The key is nothing but the position of the line&rsquo;s first character in the file, starting from zero.  This key is not at all relevant as far as this &ldquo;Finding the Husband&rdquo; problem is concerned.</p>
+
+<h3>Mapper &ndash; Sample I/O</h3>
+
+<p>Hadoop&rsquo;s MapReduce framework, by default, passes one split each to a mapper process.  By default, one split is equal to one line.</p>
+
+<p>Thus, sample input of Mapper is</p>
+
+<figure class='code'><figcaption><span>Input to a Single Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja jojo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>According to our logic, we need the following output from this mapper.</p>
+
+<figure class='code'><figcaption><span>Output of a Single Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - 1
+</span><span class='line'>jojo - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If the second line is</p>
+
+<figure class='code'><figcaption><span>Input to second Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jiji jojo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we the output of second Mapper would be</p>
+
+<figure class='code'><figcaption><span>Output of Second Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jiji - 1
+</span><span class='line'>jojo - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Shuffle and Sort &ndash; Sample I/O</h3>
+
+<p>If both the above mappers&#8217; outputs are piped to the input of the next phase, that is, Shuffle and Sort, the output of Shuffle and Sort phase would be</p>
+
+<figure class='code'><figcaption><span>Output of Shuffle & Sort</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - {1}
+</span><span class='line'>jojo - {1,1}
+</span><span class='line'>jiji - {1}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Reducer &ndash; Sample I/O</h3>
+
+<p>Reducer just adds the number of ones and consolidates the result as a single number.  So, if the above Shuffle and Sort output is piped to reducers, the output of first reducer would be</p>
+
+<figure class='code'><figcaption><span>Output of first reducer</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output of the second reducer would be</p>
+
+<figure class='code'><figcaption><span>Output of second reducer</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jojo - 2 (that is, 1+1)
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output of the third reducer would be</p>
+
+<figure class='code'><figcaption><span>Output of third reducer</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jiji - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Remember, the above sample values were only &ldquo;samples&rdquo;, chained all the way through the MapReduce process.  These are not the actual values taken from the sixteen photos in the previous post.  If not, how would we end up with only three reductions.  We must be ending up with five reductions, one for each contestant for the post of husband, right?</p>
+
+<p>Hoping that you follow what I have told until now, I am proceeding to the dare-devilry of writing the code.</p>
+
+<h3>A Good News</h3>
+
+<p>There is a good news.  Shuffle and Sort phase is already coded in the Hadoop MapReduce framework.  You have to code for Map and Reduce phases only.  Depending on the lines of code you write in Map and Reduce phases, your MapReduce code could do anything from a simple Word count to some complex Sentimental Analysis.</p>
+
+<h3>Coding the Mapper</h3>
+
+<p>We will be using the language Java to code our program.  Refer to the sample I/O section of the mapper above.  Remember that one line is called one split.  Also, a mapper does processing on a split at a time.</p>
+
+<p>We will be writing a Java class to do the mapping functionality.  This class will be called <code>MatchMakerMapper</code>.  At this juncture, I must tell you that all classes doing the mapping functionality must extend another class called <code>Mapper</code> and must define a method called <code>map()</code>.</p>
+
+<p>Thus, we are going to write a code, which would approximately look like the one below.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">pubic</span> <span class="kd">class</span> <span class="nc">MatchMakerMapper</span> <span class="kd">extends</span> <span class="n">Mapper</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">map</span><span class="o">(){</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We will add more details to the above skeleton as we progress through this blog post.</p>
+
+<p>We need to specify the input and output data types of the mapper somewhere right?  Even before that, what options do we have for input and output data types?<br/>
+1. Text &ndash; for string data<br/>
+2. IntWritable or LongWritable &ndash; for numeric data</p>
+
+<p>There are other data types as well.  But, let us stick with these data types for the sake of simplicity and problem scoping.</p>
+
+<p>Our Mapper will have the following data types:</p>
+
+<p><strong>Input</strong><br/>
+<em>Key</em> : LongWritable<br/>
+<em>Value</em> : Text</p>
+
+<p><strong>Output</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p>Ask yourself! Are these data types correct for Mapper?  If so, why?</p>
+
+<p>We are going to communicate these data types to our Java program in the following way.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerMapper</span> <span class="kd">extends</span> <span class="n">Mapper</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">map</span><span class="o">(</span><span class="n">LongWritable</span> <span class="n">key</span><span class="o">,</span> <span class="n">Text</span> <span class="n">value</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">){</span>
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After the statement <code>extends Mapper</code>, you write the following things, in the following order:<br/>
+1. Input Key Data Type<br/>
+2. Input Value Data Type<br/>
+3. Output Key Data Type<br/>
+4. Output Value Data Type</p>
+
+<p>Similarly, as first two arguments of the <code>map()</code> method, we write the input key data type and the input value data type.</p>
+
+<p>Now is the time to write the Mapper logic.  The Core Java language acts on Strings and not on Text objects.  To convert Text object to String, we need to invoke <code>toString()</code> method.  In String processing, Java provides a method called <code>split()</code>.  This method is used to split a sentence into its separate words.  Generally speaking, this method is used to split a string using a specific delimiter.</p>
+
+<p>Remember that our input value will be the content of one line of the input file.  For example, <code>jaja jojo</code>.  If this needs to be split into two separate words, we need to invoke <code>split(" ")</code> method on this.  Notice that the delimiting character specified is white-space.</p>
+
+<p>Combining the above two paragraphs, we can write the following piece of code.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="n">String</span><span class="o">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you need to emit an output a key, value pair from mapper, you could just call the <code>output.write()</code> method with the output key and value.</p>
+
+<p>In this mapper, we need to produce two outputs.  So, we need to call <code>output.write()</code> twice.  First time, key will be the first word, that is, <code>names[0]</code> and the second time, the key will be the second word, that is, <code>names[1]</code>.  Value will be 1 both the times.</p>
+
+<p>There is a catch here. <code>names[0]</code> and <code>names[1]</code> are String objects.  But, output key data type is Text.  So, we need to create new Text objects from <code>names[0]</code> and <code>names[1]</code> like <code>new Text(names[0])</code> and <code>new Text(names[1])</code> respectively.</p>
+
+<p>Thus, the output-emitting piece of code is here.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">names</span><span class="o">[</span><span class="mi">0</span><span class="o">]),</span><span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span><span class='line'>  <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">names</span><span class="o">[</span><span class="mi">1</span><span class="o">]),</span><span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Thus, assembling all the disjoint pieces, here is our complete story.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">vivekGanesan</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.LongWritable</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.Text</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.Mapper</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerMapper</span> <span class="kd">extends</span> <span class="n">Mapper</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;</span> <span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">map</span><span class="o">(</span><span class="n">LongWritable</span> <span class="n">key</span><span class="o">,</span> <span class="n">Text</span> <span class="n">value</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="c1">//If more than one word is present, split using white space.</span>
+</span><span class='line'>      <span class="n">String</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">);</span>
+</span><span class='line'>      <span class="c1">//each word contributes to a key-value pair</span>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">words</span><span class="o">[</span><span class="mi">0</span><span class="o">]),</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">words</span><span class="o">[</span><span class="mi">1</span><span class="o">]),</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Coding the Reducer</h3>
+
+<p>Remember that the reducer&rsquo;s work starts only after &ldquo;Shuffle &amp; Sort&rdquo; has done its work.  That way, each reducer will be called with one group (key,{set of values}) as input at a time.</p>
+
+<p>Similar to the case of Mapper, the Reducer also will have its own input and output data types.</p>
+
+<p><strong>Input</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p><strong>Output</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p>Similar to the case of Mapper, any class which does the Reducing functionality should extend a <code>Reducer</code> class and should define a <code>reduce()</code> method.</p>
+
+<p>So, our skeleton reducer goes like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerReducer</span> <span class="kd">extends</span> <span class="n">Reducer</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reduce</span><span class="o">(){</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Similar to the case of Mapper, same conventions apply here as to which data types go where.  Thus, we end up having the following code in Reducer.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerReducer</span> <span class="kd">extends</span> <span class="n">Reducer</span><span class="o">&lt;</span><span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;</span> <span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reduce</span><span class="o">(</span><span class="n">Text</span> <span class="n">key</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">&gt;</span> <span class="n">values</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Oops! I forgot to tell you what an <code>Iterable</code> is.  <code>Iterable</code> is anything which can be sequentially traversed.  Thus, our set of {1,1,1,&hellip;,1} falls under the category of <code>Iterable</code>.</p>
+
+<p>In order to traverse an <code>Iterable</code>, we can use a <code>for</code> loop.  In each iteration, we need to increment a counter to count the number of times a person has appeared in the photos.</p>
+
+<p>Thus, we get the following code.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="o">(</span><span class="n">LongWritable</span> <span class="nl">value:</span> <span class="n">values</span><span class="o">){</span>
+</span><span class='line'>      <span class="n">count</span><span class="o">+=</span> <span class="n">value</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we need a single <code>output.write()</code> method to collect the output key and value.  Output key is nothing but the input key, the name of the person.  Output value is the count.  Thus, we would write:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="n">count</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hereby, we present the full reducer as follows.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">vivekGanesan</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.LongWritable</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.Text</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.Reducer</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerReducer</span> <span class="kd">extends</span> <span class="n">Reducer</span><span class="o">&lt;</span><span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;</span> <span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reduce</span><span class="o">(</span><span class="n">Text</span> <span class="n">key</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">&gt;</span> <span class="n">values</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">)</span>
+</span><span class='line'>          <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="n">LongWritable</span> <span class="nl">value:</span> <span class="n">values</span><span class="o">){</span>
+</span><span class='line'>          <span class="n">count</span><span class="o">+=</span> <span class="n">value</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="n">count</span><span class="o">));</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Coding the Driver</h3>
+
+<p>The work does not stop here.  We need to code a common templatized driver class to invoke the Mapper and Reducer.  Here is the templatized driver class called  <code>MatchMakerDriver</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">vivekGanesan</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.conf.Configuration</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.conf.Configured</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.fs.Path</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.IntWritable</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.Text</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.Job</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.input.FileInputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.input.TextInputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.output.FileOutputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.output.TextOutputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.util.Tool</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.util.ToolRunner</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerDriver</span> <span class="kd">extends</span> <span class="n">Configured</span> <span class="kd">implements</span> <span class="n">Tool</span><span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">ToolRunner</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="k">new</span> <span class="n">Configuration</span><span class="o">(),</span> <span class="k">new</span> <span class="n">MatchMakerDriver</span><span class="o">(),</span> <span class="n">args</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>        
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">!=</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;usage: [input] [output]&quot;</span><span class="o">);</span>
+</span><span class='line'>          <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">Job</span> <span class="n">job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Configuration</span><span class="o">());</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setOutputKeyClass</span><span class="o">(</span><span class="n">Text</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setOutputValueClass</span><span class="o">(</span><span class="n">IntWritable</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setMapperClass</span><span class="o">(</span><span class="n">MatchMakerMapper</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setReducerClass</span><span class="o">(</span><span class="n">MatchMakerReducer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setInputFormatClass</span><span class="o">(</span><span class="n">TextInputFormat</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setOutputFormatClass</span><span class="o">(</span><span class="n">TextOutputFormat</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">FileInputFormat</span><span class="o">.</span><span class="na">setInputPaths</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="k">new</span> <span class="n">Path</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]));</span>
+</span><span class='line'>      <span class="n">FileOutputFormat</span><span class="o">.</span><span class="na">setOutputPath</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="k">new</span> <span class="n">Path</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]));</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setJarByClass</span><span class="o">(</span><span class="n">MatchMakerDriver</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">submit</span><span class="o">();</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here ends our coding effort.</p>
+
+<h3>Packaging the Code</h3>
+
+<p>In order to run in Hadoop environment, the code has to be packaged in the form of a Java Archive (JAR) file.  If you would like to run your code in <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks Sandbox</a> VM, make sure you compile your code using Java 6.</p>
+
+<h3>Running &ndash; Finding the Husband</h3>
+
+<p>The Husband can be found by running the JAR file in a Hadoop environment.  Refer to the <a href="https://github.com/hortonworks/hadoop-tutorials/blob/master/Community/T09_Write_And_Run_Your_Own_MapReduce_Java_Program_Poll_Result_Analysis.md">Hortonworks Community Tutorial</a> for instructions on how to run this in <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks Sandbox</a> VM.</p>
+
+<h3>Download the Code</h3>
+
+<p>You can download all the code mentioned in this tutorial, along with dependencies from the github repository named <a href="https://github.com/vivganes/what-is-mapreduce-blog-post">vivganes/what-is-mapreduce-blog-post</a>.</p>
+
+<p>I hope that this post was informative and useful.  Feel free to pen down your comments here or to email me at <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#x76;&#x69;&#x76;&#x65;&#x6b;&#x40;&#x76;&#105;&#x76;&#x65;&#x6b;&#x67;&#x61;&#110;&#x65;&#x73;&#97;&#x6e;&#x2e;&#x63;&#111;&#109;&#x2e;">&#x76;&#x69;&#118;&#x65;&#x6b;&#64;&#118;&#105;&#x76;&#x65;&#x6b;&#x67;&#97;&#110;&#101;&#115;&#x61;&#110;&#46;&#99;&#x6f;&#109;&#46;</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vivek Ganesan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-24T10:37:57+05:30" pubdate data-updated="true">Mar 24<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hadoop/'>hadoop</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/mapreduce/'>mapreduce</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/" data-via="vivek_ganesan" data-counturl="http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/" title="Previous Post: What is MapReduce? - An Exercise using Activity Based Learning">&laquo; What is MapReduce? - An Exercise using Activity Based Learning</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/03/27/agile-india-2015-presentation/" title="Next Post: Presentation for Vivek's session at Agile India 2015">Presentation for Vivek's session at Agile India 2015 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Profile Snapshot</h1>
+  <table>
+  <tr>
+  <td>
+  <img src="/images/super_hero_thumbnail.png" align="left"/>
+  </td>
+  <td style="margin:1px;padding: 5px;">
+Vivek Ganesan<br/>
+<font size="-1"><a href="mailto:vivek@vivekganesan.com" target='_blank'>vivek@vivekganesan.com</a></font><br/>
+ScrumMaster/Lead Software Engineer,<br/> <a href="http://www.gainsight.com"  target='_blank'>Gainsight</a><br/>
+<b>Github:</b> <a href="https://www.github.com/vivganes" target='_blank'>vivganes</a><br/>
+<b>Twitter:</b> <a href="https://www.twitter.com/vivek_ganesan" target='_blank'>vivek_ganesan</a><br/>
+  </td>
+  </tr>
+  </table>
+</section>
+<section>
+<h1>Badges</h1>
+<p align="center"><img src="/images/CSM_Seal.png"/></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/10/23/developer-2-dot-0-redefine-the-role-of-developer-to-achieve-success-for-all/">Developer 2.0 - Redefine the Role of Developer to Achieve Success for All</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/29/compendium-of-agile-india-2015-track-2/">Agile India 2015 - Agile Life Cycle - A Compendium</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/29/compendium-of-agile-india-2015-track-1/">Agile India 2015 - Scaling Agile Adoption - A Compendium</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/27/agile-india-2015-presentation/">Presentation for Vivek's session at Agile India 2015</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/">Design and Code to Choose the Husband Using MapReduce</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/vivek_ganesan"  data-widget-id="311497559334068224"  data-link-color="#1863a1" data-tweet-limit="" data-chrome="noheader nofooter transparent noscrollbar">Tweets by @vivek_ganesan</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </ul>
+  
+    <a href="http://twitter.com/vivek_ganesan" class="twitter-follow-button" data-show-count="true">Follow @vivek_ganesan</a>
+  
+</section>
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vivganes">@vivganes</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vivganes',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+<h1>Ads by Google</h1>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Ad1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3586837949186298"
+     data-ad-slot="9692284797"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Vivek Ganesan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vivekganesan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/';
+        var disqus_url = 'http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: hadoop | Vivek Ganesan]]></title>
+  <link href="http://vivekganesan.com/blog/categories/hadoop/atom.xml" rel="self"/>
+  <link href="http://vivekganesan.com/"/>
+  <updated>2015-10-24T11:53:43+05:30</updated>
+  <id>http://vivekganesan.com/</id>
+  <author>
+    <name><![CDATA[Vivek Ganesan]]></name>
+    <email><![CDATA[vivek@vivekganesan.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Design and Code to Choose the Husband Using MapReduce]]></title>
+    <link href="http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/"/>
+    <updated>2014-03-24T10:37:57+05:30</updated>
+    <id>http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce</id>
+    <content type="html"><![CDATA[<p>In the last blog post &ldquo;<a href="http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/">What is MapReduce? &ndash; An Exercise using Activity Based Learning</a>&rdquo;, the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem &ldquo;Choosing the Husband&rdquo; explained in the previous blog post.</p>
+
+<h3>Recap</h3>
+
+<p>Remember that there are three phases in the MapReduce methodology.<br/>
+1. Map<br/>
+2. Shuffle &amp; Sort (Which I simply call as &lsquo;Grouping&rsquo;)<br/>
+3. Reduce</p>
+
+<p>Here is a recap of characters in our story.</p>
+
+<p><img class="center" src="/images/character_names.png"></p>
+
+<p>Before getting on to explain the technical design of the solution, let me highlight some important points in the MapReduce methodology.</p>
+
+<ol>
+<li>The input is split into multiple input-splits before being passed to Mappers.</li>
+<li>Each mapper worker is assigned one input-split.</li>
+<li>The Map phase has input format of key,value and output format of key,value.</li>
+<li>The Shuffle &amp; Sort phase has input format of key,value and output format of key,{list of values}</li>
+<li>The Reduce phase has input format of key,{list of values} and output format of key,value</li>
+</ol>
+
+
+<h3>Assumption</h3>
+
+<p>&ldquo;Choosing the Husband&rdquo; problem explained in the previous blog post has images.  We had to identify people from images.  So, we should be writing code for image processing in this blog post, right?  No!  We are going to get rid of that image processing complexity by a convenient assumption.</p>
+
+<p>The assumption is this: We will have two input files, with eight lines each.  Each line would have two words.  Each of these words denote the name of the person identified in the image.</p>
+
+<p>For example, if the first photo contained Jaja and Jojo, the first line of the first file would read the following.</p>
+
+<p><code>text
+jaja jojo
+</code>
+Second line denotes the people present in second photo and so on upto the first eight photos.  Thereafter, entries go into the second input file.  Thus, we would end up with two files with eight lines each, each line having exactly two words.</p>
+
+<h3>Key-Value Input?? How?</h3>
+
+<p>If you have not noticed, see that I have mentioned in the &ldquo;Recap&rdquo; section that Map phase has input format of key,value.</p>
+
+<p>Map is the first phase of the MapReduce process.  So, these two files, which we have, with two words in each line, should be the input to the Map phase.  Is this a key,value pair?  Not at all!</p>
+
+<p>MapReduce framework of Hadoop does this for you by doing the following default assignments for each line in the files.<br/>
+<strong>Key</strong> &ndash; Character Position of the starting of the line<br/>
+<strong>Value</strong> &ndash; The actual content of the line</p>
+
+<p>For example, if the first line of the first file contains <code>jaja jojo</code>, then, for the first line (or split),<br/>
+<strong>Key</strong> &ndash; 0<br/>
+<strong>Value</strong> &ndash; <code>jaja jojo</code></p>
+
+<p>If the second line contained <code>jiji jojo</code>, then, for that line(or split), <br/>
+<strong>Key</strong> &ndash; 9<br/>
+<strong>Value</strong> &ndash; <code>jiji jojo</code></p>
+
+<p>The key is nothing but the position of the line&rsquo;s first character in the file, starting from zero.  This key is not at all relevant as far as this &ldquo;Finding the Husband&rdquo; problem is concerned.</p>
+
+<h3>Mapper &ndash; Sample I/O</h3>
+
+<p>Hadoop&rsquo;s MapReduce framework, by default, passes one split each to a mapper process.  By default, one split is equal to one line.</p>
+
+<p>Thus, sample input of Mapper is <br/>
+<code>text Input to a Single Mapper
+jaja jojo
+</code>
+According to our logic, we need the following output from this mapper.
+<code>text Output of a Single Mapper
+jaja - 1
+jojo - 1
+</code>
+If the second line is
+<code>text Input to second Mapper
+jiji jojo
+</code>
+Then, we the output of second Mapper would be
+<code>text Output of Second Mapper
+jiji - 1
+jojo - 1
+</code></p>
+
+<h3>Shuffle and Sort &ndash; Sample I/O</h3>
+
+<p>If both the above mappers' outputs are piped to the input of the next phase, that is, Shuffle and Sort, the output of Shuffle and Sort phase would be<br/>
+<code>text Output of Shuffle &amp; Sort
+jaja - {1}
+jojo - {1,1}
+jiji - {1}
+</code></p>
+
+<h3>Reducer &ndash; Sample I/O</h3>
+
+<p>Reducer just adds the number of ones and consolidates the result as a single number.  So, if the above Shuffle and Sort output is piped to reducers, the output of first reducer would be
+<code>text Output of first reducer
+jaja - 1
+</code></p>
+
+<p>The output of the second reducer would be
+<code>text Output of second reducer
+jojo - 2 (that is, 1+1)
+</code></p>
+
+<p>The output of the third reducer would be
+<code>text Output of third reducer
+jiji - 1
+</code></p>
+
+<p>Remember, the above sample values were only &ldquo;samples&rdquo;, chained all the way through the MapReduce process.  These are not the actual values taken from the sixteen photos in the previous post.  If not, how would we end up with only three reductions.  We must be ending up with five reductions, one for each contestant for the post of husband, right?</p>
+
+<p>Hoping that you follow what I have told until now, I am proceeding to the dare-devilry of writing the code.</p>
+
+<h3>A Good News</h3>
+
+<p>There is a good news.  Shuffle and Sort phase is already coded in the Hadoop MapReduce framework.  You have to code for Map and Reduce phases only.  Depending on the lines of code you write in Map and Reduce phases, your MapReduce code could do anything from a simple Word count to some complex Sentimental Analysis.</p>
+
+<h3>Coding the Mapper</h3>
+
+<p>We will be using the language Java to code our program.  Refer to the sample I/O section of the mapper above.  Remember that one line is called one split.  Also, a mapper does processing on a split at a time.</p>
+
+<p>We will be writing a Java class to do the mapping functionality.  This class will be called <code>MatchMakerMapper</code>.  At this juncture, I must tell you that all classes doing the mapping functionality must extend another class called <code>Mapper</code> and must define a method called <code>map()</code>.</p>
+
+<p>Thus, we are going to write a code, which would approximately look like the one below.</p>
+
+<p>```java
+pubic class MatchMakerMapper extends Mapper {</p>
+
+<p>  public void map(){</p>
+
+<p>  }</p>
+
+<p>}
+```</p>
+
+<p>We will add more details to the above skeleton as we progress through this blog post.</p>
+
+<p>We need to specify the input and output data types of the mapper somewhere right?  Even before that, what options do we have for input and output data types?<br/>
+1. Text &ndash; for string data<br/>
+2. IntWritable or LongWritable &ndash; for numeric data</p>
+
+<p>There are other data types as well.  But, let us stick with these data types for the sake of simplicity and problem scoping.</p>
+
+<p>Our Mapper will have the following data types:</p>
+
+<p><strong>Input</strong><br/>
+<em>Key</em> : LongWritable<br/>
+<em>Value</em> : Text</p>
+
+<p><strong>Output</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p>Ask yourself! Are these data types correct for Mapper?  If so, why?</p>
+
+<p>We are going to communicate these data types to our Java program in the following way.</p>
+
+<p>```java
+public class MatchMakerMapper extends Mapper&lt;LongWritable, Text, Text, LongWritable>{</p>
+
+<p>  @Override</p>
+
+<pre><code>public void map(LongWritable key, Text value, Context output){
+
+
+}
+</code></pre>
+
+<p>}</p>
+
+<p><code>``
+After the statement</code>extends Mapper`, you write the following things, in the following order:<br/>
+1. Input Key Data Type<br/>
+2. Input Value Data Type<br/>
+3. Output Key Data Type<br/>
+4. Output Value Data Type</p>
+
+<p>Similarly, as first two arguments of the <code>map()</code> method, we write the input key data type and the input value data type.</p>
+
+<p>Now is the time to write the Mapper logic.  The Core Java language acts on Strings and not on Text objects.  To convert Text object to String, we need to invoke <code>toString()</code> method.  In String processing, Java provides a method called <code>split()</code>.  This method is used to split a sentence into its separate words.  Generally speaking, this method is used to split a string using a specific delimiter.</p>
+
+<p>Remember that our input value will be the content of one line of the input file.  For example, <code>jaja jojo</code>.  If this needs to be split into two separate words, we need to invoke <code>split(" ")</code> method on this.  Notice that the delimiting character specified is white-space.</p>
+
+<p>Combining the above two paragraphs, we can write the following piece of code.</p>
+
+<p><code>java
+  String[] names = value.toString().split(" ");
+</code></p>
+
+<p>If you need to emit an output a key, value pair from mapper, you could just call the <code>output.write()</code> method with the output key and value.</p>
+
+<p>In this mapper, we need to produce two outputs.  So, we need to call <code>output.write()</code> twice.  First time, key will be the first word, that is, <code>names[0]</code> and the second time, the key will be the second word, that is, <code>names[1]</code>.  Value will be 1 both the times.</p>
+
+<p>There is a catch here. <code>names[0]</code> and <code>names[1]</code> are String objects.  But, output key data type is Text.  So, we need to create new Text objects from <code>names[0]</code> and <code>names[1]</code> like <code>new Text(names[0])</code> and <code>new Text(names[1])</code> respectively.</p>
+
+<p>Thus, the output-emitting piece of code is here.</p>
+
+<p><code>java
+  output.write(new Text(names[0]),new LongWritable(1));
+  output.write(new Text(names[1]),new LongWritable(1));
+</code></p>
+
+<p>Thus, assembling all the disjoint pieces, here is our complete story.</p>
+
+<p>```java
+package com.vivekGanesan;</p>
+
+<p>import java.io.IOException;</p>
+
+<p>import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;</p>
+
+<p>public class MatchMakerMapper extends Mapper&lt;LongWritable, Text, Text, LongWritable> {</p>
+
+<pre><code>@Override
+public void map(LongWritable key, Text value, Context output) throws IOException, InterruptedException {
+
+    //If more than one word is present, split using white space.
+    String[] words = value.toString().split(" ");
+    //each word contributes to a key-value pair
+    output.write(new Text(words[0]), new LongWritable(1));
+    output.write(new Text(words[1]), new LongWritable(1));
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<h3>Coding the Reducer</h3>
+
+<p>Remember that the reducer&rsquo;s work starts only after &ldquo;Shuffle &amp; Sort&rdquo; has done its work.  That way, each reducer will be called with one group (key,{set of values}) as input at a time.</p>
+
+<p>Similar to the case of Mapper, the Reducer also will have its own input and output data types.</p>
+
+<p><strong>Input</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p><strong>Output</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p>Similar to the case of Mapper, any class which does the Reducing functionality should extend a <code>Reducer</code> class and should define a <code>reduce()</code> method.</p>
+
+<p>So, our skeleton reducer goes like this:</p>
+
+<p>```java</p>
+
+<p>public class MatchMakerReducer extends Reducer {</p>
+
+<p>  public void reduce(){</p>
+
+<p>  }</p>
+
+<p>}
+```
+Similar to the case of Mapper, same conventions apply here as to which data types go where.  Thus, we end up having the following code in Reducer.</p>
+
+<p>```java
+public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, LongWritable> {</p>
+
+<pre><code>@Override
+public void reduce(Text key, Iterable&lt;LongWritable&gt; values, Context output) {
+
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Oops! I forgot to tell you what an <code>Iterable</code> is.  <code>Iterable</code> is anything which can be sequentially traversed.  Thus, our set of {1,1,1,&hellip;,1} falls under the category of <code>Iterable</code>.</p>
+
+<p>In order to traverse an <code>Iterable</code>, we can use a <code>for</code> loop.  In each iteration, we need to increment a counter to count the number of times a person has appeared in the photos.</p>
+
+<p>Thus, we get the following code.</p>
+
+<p>```java</p>
+
+<pre><code>    int count = 0;
+    for(LongWritable value: values){
+        count+= value.get();
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>Then, we need a single <code>output.write()</code> method to collect the output key and value.  Output key is nothing but the input key, the name of the person.  Output value is the count.  Thus, we would write:</p>
+
+<p>```java</p>
+
+<pre><code>  output.write(key, new LongWritable(count));
+</code></pre>
+
+<p>```</p>
+
+<p>Hereby, we present the full reducer as follows.</p>
+
+<p>```java
+package com.vivekGanesan;</p>
+
+<p>import java.io.IOException;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;</p>
+
+<p>public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, LongWritable> {</p>
+
+<pre><code>@Override
+public void reduce(Text key, Iterable&lt;LongWritable&gt; values, Context output)
+        throws IOException, InterruptedException {
+    int count = 0;
+    for(LongWritable value: values){
+        count+= value.get();
+    }
+    output.write(key, new LongWritable(count));
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<h3>Coding the Driver</h3>
+
+<p>The work does not stop here.  We need to code a common templatized driver class to invoke the Mapper and Reducer.  Here is the templatized driver class called  <code>MatchMakerDriver</code>.</p>
+
+<p>```java
+package com.vivekGanesan;</p>
+
+<p>import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;</p>
+
+<p>public class MatchMakerDriver extends Configured implements Tool{</p>
+
+<pre><code>public static void main(String[] args) throws Exception {
+    int res = ToolRunner.run(new Configuration(), new MatchMakerDriver(), args);
+    System.exit(res);       
+}
+
+@Override
+public int run(String[] args) throws Exception {
+    if (args.length != 2) {
+        System.out.println("usage: [input] [output]");
+        System.exit(-1);
+    }
+
+    Job job = Job.getInstance(new Configuration());
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+
+    job.setMapperClass(MatchMakerMapper.class);
+    job.setReducerClass(MatchMakerReducer.class);
+
+    job.setInputFormatClass(TextInputFormat.class);
+    job.setOutputFormatClass(TextOutputFormat.class);
+
+    FileInputFormat.setInputPaths(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+
+    job.setJarByClass(MatchMakerDriver.class);
+
+    job.submit();
+    return 0;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Here ends our coding effort.</p>
+
+<h3>Packaging the Code</h3>
+
+<p>In order to run in Hadoop environment, the code has to be packaged in the form of a Java Archive (JAR) file.  If you would like to run your code in <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks Sandbox</a> VM, make sure you compile your code using Java 6.</p>
+
+<h3>Running &ndash; Finding the Husband</h3>
+
+<p>The Husband can be found by running the JAR file in a Hadoop environment.  Refer to the <a href="https://github.com/hortonworks/hadoop-tutorials/blob/master/Community/T09_Write_And_Run_Your_Own_MapReduce_Java_Program_Poll_Result_Analysis.md">Hortonworks Community Tutorial</a> for instructions on how to run this in <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks Sandbox</a> VM.</p>
+
+<h3>Download the Code</h3>
+
+<p>You can download all the code mentioned in this tutorial, along with dependencies from the github repository named <a href="https://github.com/vivganes/what-is-mapreduce-blog-post">vivganes/what-is-mapreduce-blog-post</a>.</p>
+
+<p>I hope that this post was informative and useful.  Feel free to pen down your comments here or to email me at <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x76;&#105;&#x76;&#x65;&#x6b;&#64;&#118;&#x69;&#118;&#x65;&#107;&#103;&#x61;&#x6e;&#101;&#x73;&#97;&#x6e;&#46;&#x63;&#111;&#109;&#46;">&#x76;&#105;&#x76;&#x65;&#x6b;&#x40;&#x76;&#x69;&#118;&#x65;&#107;&#x67;&#97;&#110;&#x65;&#x73;&#x61;&#110;&#x2e;&#x63;&#x6f;&#x6d;&#46;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What is MapReduce? - An Exercise using Activity Based Learning]]></title>
+    <link href="http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/"/>
+    <updated>2014-03-22T18:17:23+05:30</updated>
+    <id>http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning</id>
+    <content type="html"><![CDATA[<p>Whenever I have the chance to explain somebody the process of MapReduce, I find it demoralising that &ldquo;Word Count&rdquo; is the only example found on almost all places in the internet.  I could not recommend any reading material which gives them more insight than a simple word count.  Yet, something good came out of this problem.  I was forced to think of a simple-enough-scenario to apply MapReduce and write a blog post about it.  And, here I am, writing a blog post titled &ldquo;What is MapReduce?&rdquo;.</p>
+
+<p>I am going to let out a super secret that I have been keeping for a while.  I am going to tell you how I would actually teach a person about MapReduce, if I am the teacher.  This blog post is based on &ldquo;Activity Based Learning&rdquo; where the students would do some real activity and learn from the same.</p>
+
+<p>Enough of front matter, let me get on to the topic.  We are going to start with a story that will be the base to our activity.  And, here is that story.</p>
+
+<h2>The Story &ndash; Choosing the Husband</h2>
+
+<p>Long long ago, there was a nation ruled by a mighty king.  He had a beautiful daughter, who was adored by everyone in the kingdom.  As she reached the age of marriage, five young men from the country proposed to her.  Their names were</p>
+
+<ol>
+<li>Jaja</li>
+<li>Jiji</li>
+<li>Juju</li>
+<li>Jojo</li>
+<li>Jinjin</li>
+</ol>
+
+
+<p>Actually, these five young men were already friends of the princess.</p>
+
+<p>Now, the choice rests with the princess.  The princess liked the five equally.  But, she can marry only one among the five.</p>
+
+<p>After a lot of thought process, she came up with a plan.  One fine day, she called all the five young men.  She said, &ldquo;I like each of you.  But, I can marry only one.  I want to choose my better half using a fair process. Here is the plan.  I like to travel a lot.  I want my life partner to have similar likings as me.  So, I will set up secret cameras (come on, don&rsquo;t cry, this is just a story) in the places I like to visit in this country.  These secret cameras will take still photos at random times.  This will go on for one month.&rdquo;</p>
+
+<p>She added, &ldquo;For the next one month, you guys go on with your usual life.  Whoever occurs most in the photos captured by the secret cameras will be my husband.I will announce my husband publicly on the day next to the end of one month.&rdquo;</p>
+
+<p>She also warned, &ldquo;Beware, any foul-plays will automatically disqualify you.&rdquo;</p>
+
+<p>A full month passed by.  The princess checked the photos from cameras and found that there were 16,000 photos in total.  Yes, sixteen thousand!  She has a deadline of one day to announce the results.  How is she going to process all sixteen thousand photos in a day?
+Yes, she is currently facing a Big Data problem.</p>
+
+<p>The princess thought of her problem and came to the only person whom she thought had the brains to help her in this problem, you :)  Yes, she came to you and asked for help.</p>
+
+<h2>The Action &ndash; Choosing the Husband</h2>
+
+<p>The story ends here and our action starts here. For the purpose of simplicity, let us assume we have 16 photos and not 16,000 photos.  You have a team of five people under your command to perform whatever you order them to do.</p>
+
+<h3>Step-1: Identification</h3>
+
+<p>The first and foremost problem is to identify the people in the photos.  For that, we need reference photos of those five people.  Here is a single image, which shows the faces of all the five guys, along with their names.</p>
+
+<p><img class="center" src="/images/character_names.png"></p>
+
+<p>For a successful identification of a person in any photo, play close attention to the following details.</p>
+
+<ol>
+<li>The Hair style</li>
+<li>Does the person wear spectacles or not</li>
+<li>Beard</li>
+</ol>
+
+
+<p>These three features are enough to identify a person in the photos.</p>
+
+<p>Now, coming to the photos, here are they.  I have made these photos in such a way that each photo contains two and only two of our guys.  There might be a third person in some photos.  But, that third person will not be one of our guys and you can ignore him.</p>
+
+<p><img class="center" src="/images/1.png">
+<img class="center" src="/images/2.png">
+<img class="center" src="/images/3.png">
+<img class="center" src="/images/4.png">
+<img class="center" src="/images/5.png">
+<img class="center" src="/images/6.png">
+<img class="center" src="/images/7.png">
+<img class="center" src="/images/8.png">
+<img class="center" src="/images/9.png">
+<img class="center" src="/images/10.png">
+<img class="center" src="/images/11.png">
+<img class="center" src="/images/12.png">
+<img class="center" src="/images/13.png">
+<img class="center" src="/images/14.png">
+<img class="center" src="/images/15.png">
+<img class="center" src="/images/16.png"></p>
+
+<p>Split your team into two sub-teams.  Give 8 photos to one sub-team and the remaining 8 to the next sub-team.  Ask the teams to identify the persons in the photos and record it in a sheet of paper.</p>
+
+<p>STOP HERE! There is a rule which I forgot to tell you.  The sub-teams have to record the identification in a particular format.  For each person they identify in each photo, an entry has to be made like this in the sheet of paper given to them.</p>
+
+<p><code>text Contents of the sheet
+&lt;name&gt; - 1
+</code></p>
+
+<p>For example, in the first photo, if the sub-team finds Jaja and Jojo, then the sheet should contain entries as follows.</p>
+
+<p><code>text Contents of the Sheet
+jaja - 1
+jojo - 1
+</code>
+In the second photo, if Jaja is found again, a fresh entry has to be made in the sheet and the count of the already existing <code>jaja</code> should not be touched.  So, for example, if the second photo contains Jaja and Jiji, then, the sheet must look like the one below.</p>
+
+<p><code>text Contents of the Sheet
+jaja - 1
+jojo - 1
+jaja - 1
+jiji - 1
+</code></p>
+
+<p>Now, ask the sub-teams to do their job and once they are done with all the eight photos given to each of the sub-teams, there will be 16 lines in each sheet of paper.  This is because, each photo will certainly contain two of our guys.</p>
+
+<h3>Step-2: Grouping</h3>
+
+<p>Now, collect the two sheets of papers with 16 lines each from the sub-teams.  Remember that your team size is 5.  Now, lets assign work to each individual and you will also do a part of the work.</p>
+
+<p>Take five blank sheets of paper and write each guy&rsquo;s name on the top of the sheet.  For example, the first sheet will have <code>JAJA</code> written on top of it, the second sheet will have <code>JIJI</code> and so on.</p>
+
+<p>Give each sheet to each person in the team.  So, each person in your team will end up having one sheet each.</p>
+
+<p>Remember that you have two sheets as output of step-1.  You, the commander, should read-out each line in those sheets one by one.  And, the team members, should listen for their guy&rsquo;s mention.</p>
+
+<p>For example, you shout &ldquo;jaja &ndash; 1&rdquo;, then, the guy who holds the JAJA paper would write <code>1</code> in his paper.  Next, you shout &ldquo;jojo &ndash; 1&rdquo; the, the guy who holds the JOJO paper would write <code>1</code> in his paper.  If a name repeats, another <code>1</code> has to be written.  The existing <code>1</code> should never be disturbed.</p>
+
+<p>Thus, following the above rules, the JAJA sheet could possibly look like the one below.</p>
+
+<p><code>text JAJA
+1
+1
+1
+1
+1
+</code></p>
+
+<h3>Step-3: Consolidating</h3>
+
+<p>The next step is the easiest one.  Now, collect the sheet of papers from your team members and distribute the same sheets but to different people.  In short, the person holding JAJA sheet in second step should not hold JAJA sheet in this step.</p>
+
+<p>Ask the five team members to count the number of <code>1</code>s in each sheet and write the number in BIG letters in the reverse side of the same sheet.  Also, ask them to write the guy&rsquo;s name in BIG letters in the reverse side of the sheet also.</p>
+
+<p>So, for example, if JAJA paper had 5 ones, the reverse of that paper would look like the following.</p>
+
+<p>```text</p>
+
+<h1>JAJA</h1>
+
+<p>5
+```
+Now, at the end of this step, you would know how many times each person has appeared in the photos and you can tell the princess who her husband would be.</p>
+
+<p>An interesting fact is that, without even knowing, you have used MapReduce manually to select the husband of the princess.</p>
+
+<h2>What is MapReduce?</h2>
+
+<p>MapReduce is a framework/philosophy/algorithm/methodology which helps us solve certain complex problems by divide-and-rule technique.</p>
+
+<p>MapReduce assumes that you have more than one workers, who can do the work for you.  In our case, we had 5 workers and 1 master.  MapReduce takes the advantage of parallel processing done by many workers so that more work is done in less time.</p>
+
+<p>Not all jobs can be parallelly executed.  Only certain jobs can be executed parallely.  In the example above, consolidation and identification cannot be parallely executed.  It is necessary that consolidation can be done only after identification and grouping has happened.</p>
+
+<h2>Phases of MapReduce</h2>
+
+<p>Similar to our exercise above, MapReduce has three phases.</p>
+
+<h3>Phase 1 &ndash; Mapping</h3>
+
+<p>Mapping is nothing but the identification.  In our example, you mapped a number, that is, 1 to a name.  Or, you put the number 1 in the bucket named &lsquo;JAJA&rsquo;.  This association or identification is called mapping.</p>
+
+<p>Output of mapper is always a set of key-value pairs.  Here, in our example, key is the name of the person and value is always one.</p>
+
+<h3>Phase 2 &ndash; Shuffle &amp; Sort</h3>
+
+<p>Shuffle and sort is nothing but grouping all the mapped values according to the key.  Remember, the key in the mapper is the name of the person.  In our example, we grouped all the values, that is, the ones under the persons' names.</p>
+
+<p>We could also have chosen to sort the groups based on key, that is the name of the person.  That way, we would have arranged the papers in the order Jaja, Jiji, Jinjin, Jojo and Juju if we followed alphabetic sorting.</p>
+
+<p>The output of shuffle &amp; sort phase is always a set of key-value pairs where each value is again a set of values.  For example, Jaja is the key and value = {1,1,1,1,1}</p>
+
+<h3>Phase 3 &ndash; Reducing</h3>
+
+<p>Reducing is the job of consolidating several numbers(ones) into a single number for each group resulting from Phase 2.  This final single number for a group is the net result targeted by the problem, with which we can arrive at a final solution to the problem.</p>
+
+<p>For example, looking at the numbers on the reverse of the sheet, we can know who has appeared most number of times in the photos and hence, we could advise the princess about who her husband would be.</p>
+
+<h3>A Note on Parallel Processing</h3>
+
+<p>Throughout our entire process, the following parallel processings took place.<br/>
+1. Parallel processing of sub-teams (Mappers) in Phase &ndash; 1<br/>
+2. Parallel processing of team members (Reducers) in Phase &ndash; 3</p>
+
+<p>In other words, Phase &ndash; 2 is the only non-parallel process in the whole work flow.  If we had 16,000 photos also, it would just be a matter of number of workers to solve the problem within one day.</p>
+
+<p>Thus, adjusting the number of workers, we can arrive at a solution today, tomorrow or next week.  This is called scaling.  MapReduce is the hot topic in BigData Processing because it can scale.</p>
+
+<p>That&rsquo;s it from my side for this post.  You can refer to all the materials referred in this post in the github repository named <a href="https://github.com/vivganes/what-is-mapreduce-blog-post">vivganes/what-is-mapreduce-blog-post</a></p>
+
+<p>Hope this blog post was interesting and enlightening.  I am eager to hear your comments.  Please post your comments here or email me at <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#118;&#105;&#x76;&#x65;&#107;&#64;&#118;&#x69;&#x76;&#101;&#x6b;&#x67;&#x61;&#x6e;&#101;&#x73;&#x61;&#x6e;&#x2e;&#99;&#111;&#x6d;&#x2e;">&#118;&#105;&#118;&#x65;&#x6b;&#x40;&#118;&#105;&#x76;&#x65;&#x6b;&#x67;&#x61;&#110;&#x65;&#115;&#x61;&#110;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;</a></p>
+
+<p>P.S.: I snap-shotted the pictures from <a href="https://apps.facebook.com/bitstrips/">BitStrips Facebook App</a></p>
+]]></content>
+  </entry>
+  
+</feed>

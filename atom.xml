@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Vivek Ganesan]]></title>
+  <link href="http://vivekganesan.com/atom.xml" rel="self"/>
+  <link href="http://vivekganesan.com/"/>
+  <updated>2015-10-24T11:53:43+05:30</updated>
+  <id>http://vivekganesan.com/</id>
+  <author>
+    <name><![CDATA[Vivek Ganesan]]></name>
+    <email><![CDATA[vivek@vivekganesan.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Developer 2.0 - Redefine the Role of Developer to Achieve Success for All]]></title>
+    <link href="http://vivekganesan.com/blog/2015/10/23/developer-2-dot-0-redefine-the-role-of-developer-to-achieve-success-for-all/"/>
+    <updated>2015-10-23T17:37:48+05:30</updated>
+    <id>http://vivekganesan.com/blog/2015/10/23/developer-2-dot-0-redefine-the-role-of-developer-to-achieve-success-for-all</id>
+    <content type="html"><![CDATA[<p>Some time ago, I delivered a webinar on how we can redefine the role of developer to achieve success for all in your organization.  Here is the video recording of the same.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-bhJ9vu7khI" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Here are the slides used in the webinar.</p>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/juBgWVhWVF27Nu" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/caliberoviv/developer-20-redefine-the-role-of-developer-to-achieve-success-for-all" title="Developer 2.0 redefine the role of developer to achieve success for all" target="_blank">Developer 2.0 redefine the role of developer to achieve success for all</a> </strong> from <strong><a href="//www.slideshare.net/caliberoviv" target="_blank">Vivek Ganesan</a></strong> </div></p>
+
+<p>Thanks a lot to Discuss Agile group for this webinar initiative.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Agile India 2015 - Agile Life Cycle - A Compendium]]></title>
+    <link href="http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-2/"/>
+    <updated>2015-03-29T10:23:33+05:30</updated>
+    <id>http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-2</id>
+    <content type="html"><![CDATA[<p>After the <a href="http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-1/">first two days</a> of Agile India 2015 &ndash; Scaling Agile Adoption track, it was finally the time to learn about Agile Life Cycle.  This blog post aims to create a compendium of my learnings from the Agile Life Cycle track of the conference.</p>
+
+<h2>Day &ndash; 3</h2>
+
+<p>The keynote of <a href="http://confengine.com/user/dave-snowden">Dave Snowden</a>, titled <a href="http://confengine.com/agile-india-2015/schedule#session-4277-info">Embrace Complexity, Scale Agility</a> frankly went over my head!  The concepts were too complex to catch, fitting the title.  To date, I am trying to stare at his presentation and to make sense of a lot of concepts.  This served as a reminder of how long the way forward is, for me at least.</p>
+
+<p><a href="http://confengine.com/user/anand-bagmar">Anand Bagmar</a>&rsquo;s talk titled &lsquo;<a href="http://confengine.com/agile-india-2015/schedule#session-4281-info">Enabling Continuous Delivery in Enterprises with Testing</a>&rsquo; presented a very HUGE problem of scale and how it was solved.  This case study by Thoughtworks explains how a triangular pyramid of testing became a pentagonal pyramid when problems and situations become complex.</p>
+
+<p><a href="http://confengine.com/user/arvi-krishnaswamy">Arvi Krishnaswamy</a> talked about <a href="http://confengine.com/agile-india-2015/schedule#session-4284-info">Lessons Learnt from an MVP</a>.  The <a href="http://arg0s.in/what-we-learnt-from-a-failed-mvp.html">blog post</a> he provided in the conference system is a very detailed explanation of what he did.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-Sv_VlJtJmVw/VRlFYLwI1OI/AAAAAAAAFkk/agGmg0uVB9Q/w865-h577-no/REA70214.JPG" alt="Naresh Jain" /></p>
+
+<p>User story slicing has consistently been a problem, which was difficult to solve.  <a href="http://confengine.com/user/naresh-jain">Naresh Jain</a> addressed this concern by giving pointers on <a href="http://confengine.com/agile-india-2015/schedule#session-4289-info">how to effectively slice user stories</a>, as a session.</p>
+
+<h2>Day &ndash; 4</h2>
+
+<p>For a person like me, the topic of Behavior Driven Development was very new.  The last day&rsquo;s <a href="http://confengine.com/agile-india-2015/schedule#session-4304-info">keynote</a> was by the person (<a href="http://confengine.com/user/aslak-hellesy">Aslak Hellesøy</a>) behind Cucumber.  After reading the Wikipedia&rsquo;s BDD page, the slides of the talk make sense to me now.</p>
+
+<p><a href="http://confengine.com/user/sophie-freiermuth">Sophie Freiermuth</a> presented a talk of <a href="http://confengine.com/agile-india-2015/schedule#session-4308-info">Agile from the point of view of a UX person</a>.  It was very informative to view the world from the eyes of a UX engineer.</p>
+
+<p><img src="https://lh5.googleusercontent.com/-qw9yQDQlCBo/VRrBEBnYgbI/AAAAAAAAF7A/EwE5sEllIOw/w868-h577-no/DSC_1074.JPG" alt="Sophie" /></p>
+
+<p>I came to learn about a tool called Chef, which can be used to test infrastructure code in Test Driven Development.  Thanks to <a href="http://confengine.com/user/sreedevi-vedula">Sreedevi</a>&rsquo;s <a href="http://confengine.com/agile-india-2015/schedule#session-4313-info">session</a>.</p>
+
+<p>Then, it was soon time for my (Yes, my!) own (Yes, my own!) <a href="http://confengine.com/agile-india-2015/schedule#session-4317-info">session</a>.  Another blog post is on the way about how it went.</p>
+
+<p>Soon after my session was over, it was very interesting to listen to <a href="http://confengine.com/user/jeff-lopez-stuit">Jeff Lopez</a>, when he talked about <a href="http://confengine.com/agile-india-2015/schedule#session-4320-info">how Exorcist was a lean planning master</a> :)</p>
+
+<p><a href="http://confengine.com/user/ankur-sambhar">Ankur</a>&rsquo;s session scandalously promoted <a href="http://confengine.com/agile-india-2015/schedule#session-4323-info">promiscuity</a>.. in pair programming :)  The talk on his experience with the pair programming was very informative and inspiring.</p>
+
+<p>After being continuously overwhelmed for four days, the conference came to an end and I travelled back to Hyderabad with lots of learnings in my heart.  Yes, the near future would be music to my organization.  I am sure of that!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Agile India 2015 - Scaling Agile Adoption - A Compendium]]></title>
+    <link href="http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-1/"/>
+    <updated>2015-03-29T10:23:33+05:30</updated>
+    <id>http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-1</id>
+    <content type="html"><![CDATA[<p>Ever heard of an eye-opener?  Ever experienced it?  I just had one recently.  And, that eye-opener lasted for full 4 days!  I am talking about an <a href="http://2015.agileindia.org/">Agile India 2015</a> &ndash; An agile conference that I attended over the past 4 days.  The first two days were dedicated to the track &ldquo;Scaling Agile Adoption&rdquo; and the next two days were for &ldquo;Agile Life Cycle&rdquo;</p>
+
+<p>I realize from my personal experiences that the learnings of a conference are like water held in hands.  Over time, they trickle drop by drop to oblivion without you realizing them.  So, I decided to make a compendium of my experience at Agile India 2015 as soon as I can.  And, here it is!</p>
+
+<p>This post is aimed at providing a gist of <strong>&ldquo;Scaling Agile Adoption&rdquo;</strong> track of the conference.</p>
+
+<h2>Day -1</h2>
+
+<p>The day started with Diana Larsen&rsquo;s keynote <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Dancing along the Agile Fluency Path</a> where I was exposed, for the first time in life, to the concept of <a href="http://martinfowler.com/articles/agileFluency.html">Agile Fluency Model</a>.  This keynote made me realize that the &ldquo;Scrum&rdquo; is a part of a larger picture.
+<img src="https://lh5.googleusercontent.com/xOWEpcL2_-gxO01GRJtRNpA5ZC1_eBI9M7NGAJ9bSDg=w865-h577-no" alt="Diana Larsen" /></p>
+
+<p>During the next session, <a href="http://confengine.com/user/ashish-parkhi">Ashish Parkhi</a> and <a href="http://nareshjain.com/about">Naresh Jain</a> overwhelmed the audience with a report on how they gamified Agile development in a team, <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">by making work a game</a>. And, that is not the end of it.  The most interesting part was the Q&amp;A time where audience asked what are the negative things that they faced because of this game.  For all over-enthusiastic people like me, this was most informative that we should have a misuse-prevention strategy in advance before rolling out anything like this.</p>
+
+<p>In another talk, <a href="http://confengine.com/user/seshadri-veeraraghavan">Seshadri Veeraraghavan</a> explained about how <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">cultural and behavioral tendencies</a> can affect work and also provided some suggestions on how to tackle them.  I got a positive inspiration to promote experimentation to change the status quo from this talk.</p>
+
+<p>In his session <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">To Pair or Not to Pair</a>, <a href="http://www.twitter.com/@kaaykaaybee">@kaaykaaybee</a> explained the importance of pair programming, comparing it with pairing of wine and cheese.  His ending slide says &ldquo;<em>Wine doesn&rsquo;t judge me, neither should you</em>&rdquo; :)</p>
+
+<p>Big Agile &ndash; a session by <a href="http://www.twitter.com/@sriramnarayan">Sriram Narayan</a> stressed the importance of <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">organizing the continuous delivery by outcome</a> rather than activity.</p>
+
+<h2>Day -2</h2>
+
+<p><a href="http://twitter.com/@jeffpatton">Jeff Patton</a> rocked the stage with his keynote &ndash; <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Won&rsquo;t Get Fooled Again</a>.  His theory of what makes a better user experience amazed me.  The pyramid of <a href="https://www.slideshare.net/slideshow/embed_code/46600236">Utility, Usability and Aesthetics</a> was a nice and  usable theory in itself.</p>
+
+<p>The current model of QA in many organizations was challenged by the inverted pyramid presented in the session &ndash; <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Death of Inspection</a>.  Stress on collaboration over war between developers and testers was the key takeaway.</p>
+
+<p><a href="http://twitter.com/@asidky">Ahmed Sidky</a> aka Doctor Agile blew our minds away by a revolutionary concept of <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Value teams</a>.  Value team is a concept where instead of product management and delivery spread across two teams, they merge into a single team for better results.
+<img src="https://lh4.googleusercontent.com/-PVVqeAu3yiE/VRlFir7jf-I/AAAAAAAAFmQ/u3NURTXbc44/w865-h577-no/REA70254.JPG" alt="Ahmed Sidky" /></p>
+
+<p><a href="http://confengine.com/user/nanda-lankalapalli">Nanda Lankalapalli</a>, in another session, explained how <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">happy teams are key to success</a>.  The talk explained how allowing team members to choose their own teams helped an organization to boost its success.  The talk was overwhelming in its simplicity and value.</p>
+
+<p><a href="http://confengine.com/user/alexey-pikulev">Alexey Pikulev</a>&rsquo;s workshop on <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Growing Trust</a> was just awesome and educating.  It clearly helped me understanding the meaning of trust and why it is important.  His exercise questions on how to win back lost trust were very helpful by encouraging us to come up with a solution to win back trust.</p>
+
+<p>Needless to say, I got a lot of new connections and goodies from the stalls at conference.  In addition to that, the food was just superb!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Presentation for Vivek's session at Agile India 2015]]></title>
+    <link href="http://vivekganesan.com/blog/2015/03/27/agile-india-2015-presentation/"/>
+    <updated>2015-03-27T12:00:00+05:30</updated>
+    <id>http://vivekganesan.com/blog/2015/03/27/agile-india-2015-presentation</id>
+    <content type="html"><![CDATA[<p>I prepared an awesome presentation for my talk at Agile India 2015.  The session title is &lsquo;<strong>Congratulations! You are our Startup&rsquo;s First Scrum Master! What&rsquo;s next?</strong>&rsquo;</p>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/46406922" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/caliberoviv/congratulations-you-are-our-startups-first-scrum-master-whats-next" title="Congratulations! You are our Startup&#x27;s First Scrum Master - What&#x27;s Next?" target="_blank">Congratulations! You are our Startup&#x27;s First Scrum Master &ndash; What&#x27;s Next?</a> </strong> from <strong><a href="//www.slideshare.net/caliberoviv" target="_blank">Vivek Ganesan</a></strong> </div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Design and Code to Choose the Husband Using MapReduce]]></title>
+    <link href="http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce/"/>
+    <updated>2014-03-24T10:37:57+05:30</updated>
+    <id>http://vivekganesan.com/blog/2014/03/24/design-and-code-to-choose-the-husband-using-mapreduce</id>
+    <content type="html"><![CDATA[<p>In the last blog post &ldquo;<a href="http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/">What is MapReduce? &ndash; An Exercise using Activity Based Learning</a>&rdquo;, the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem &ldquo;Choosing the Husband&rdquo; explained in the previous blog post.</p>
+
+<h3>Recap</h3>
+
+<p>Remember that there are three phases in the MapReduce methodology.<br/>
+1. Map<br/>
+2. Shuffle &amp; Sort (Which I simply call as &lsquo;Grouping&rsquo;)<br/>
+3. Reduce</p>
+
+<p>Here is a recap of characters in our story.</p>
+
+<p><img class="center" src="http://vivekganesan.com/images/character_names.png"></p>
+
+<p>Before getting on to explain the technical design of the solution, let me highlight some important points in the MapReduce methodology.</p>
+
+<ol>
+<li>The input is split into multiple input-splits before being passed to Mappers.</li>
+<li>Each mapper worker is assigned one input-split.</li>
+<li>The Map phase has input format of key,value and output format of key,value.</li>
+<li>The Shuffle &amp; Sort phase has input format of key,value and output format of key,{list of values}</li>
+<li>The Reduce phase has input format of key,{list of values} and output format of key,value</li>
+</ol>
+
+
+<h3>Assumption</h3>
+
+<p>&ldquo;Choosing the Husband&rdquo; problem explained in the previous blog post has images.  We had to identify people from images.  So, we should be writing code for image processing in this blog post, right?  No!  We are going to get rid of that image processing complexity by a convenient assumption.</p>
+
+<p>The assumption is this: We will have two input files, with eight lines each.  Each line would have two words.  Each of these words denote the name of the person identified in the image.</p>
+
+<p>For example, if the first photo contained Jaja and Jojo, the first line of the first file would read the following.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja jojo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Second line denotes the people present in second photo and so on upto the first eight photos.  Thereafter, entries go into the second input file.  Thus, we would end up with two files with eight lines each, each line having exactly two words.</p>
+
+<h3>Key-Value Input?? How?</h3>
+
+<p>If you have not noticed, see that I have mentioned in the &ldquo;Recap&rdquo; section that Map phase has input format of key,value.</p>
+
+<p>Map is the first phase of the MapReduce process.  So, these two files, which we have, with two words in each line, should be the input to the Map phase.  Is this a key,value pair?  Not at all!</p>
+
+<p>MapReduce framework of Hadoop does this for you by doing the following default assignments for each line in the files.<br/>
+<strong>Key</strong> &ndash; Character Position of the starting of the line<br/>
+<strong>Value</strong> &ndash; The actual content of the line</p>
+
+<p>For example, if the first line of the first file contains <code>jaja jojo</code>, then, for the first line (or split),<br/>
+<strong>Key</strong> &ndash; 0<br/>
+<strong>Value</strong> &ndash; <code>jaja jojo</code></p>
+
+<p>If the second line contained <code>jiji jojo</code>, then, for that line(or split), <br/>
+<strong>Key</strong> &ndash; 9<br/>
+<strong>Value</strong> &ndash; <code>jiji jojo</code></p>
+
+<p>The key is nothing but the position of the line&rsquo;s first character in the file, starting from zero.  This key is not at all relevant as far as this &ldquo;Finding the Husband&rdquo; problem is concerned.</p>
+
+<h3>Mapper &ndash; Sample I/O</h3>
+
+<p>Hadoop&rsquo;s MapReduce framework, by default, passes one split each to a mapper process.  By default, one split is equal to one line.</p>
+
+<p>Thus, sample input of Mapper is</p>
+
+<figure class='code'><figcaption><span>Input to a Single Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja jojo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>According to our logic, we need the following output from this mapper.</p>
+
+<figure class='code'><figcaption><span>Output of a Single Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - 1
+</span><span class='line'>jojo - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If the second line is</p>
+
+<figure class='code'><figcaption><span>Input to second Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jiji jojo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we the output of second Mapper would be</p>
+
+<figure class='code'><figcaption><span>Output of Second Mapper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jiji - 1
+</span><span class='line'>jojo - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Shuffle and Sort &ndash; Sample I/O</h3>
+
+<p>If both the above mappers&#8217; outputs are piped to the input of the next phase, that is, Shuffle and Sort, the output of Shuffle and Sort phase would be</p>
+
+<figure class='code'><figcaption><span>Output of Shuffle & Sort</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - {1}
+</span><span class='line'>jojo - {1,1}
+</span><span class='line'>jiji - {1}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Reducer &ndash; Sample I/O</h3>
+
+<p>Reducer just adds the number of ones and consolidates the result as a single number.  So, if the above Shuffle and Sort output is piped to reducers, the output of first reducer would be</p>
+
+<figure class='code'><figcaption><span>Output of first reducer</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output of the second reducer would be</p>
+
+<figure class='code'><figcaption><span>Output of second reducer</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jojo - 2 (that is, 1+1)
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output of the third reducer would be</p>
+
+<figure class='code'><figcaption><span>Output of third reducer</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jiji - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Remember, the above sample values were only &ldquo;samples&rdquo;, chained all the way through the MapReduce process.  These are not the actual values taken from the sixteen photos in the previous post.  If not, how would we end up with only three reductions.  We must be ending up with five reductions, one for each contestant for the post of husband, right?</p>
+
+<p>Hoping that you follow what I have told until now, I am proceeding to the dare-devilry of writing the code.</p>
+
+<h3>A Good News</h3>
+
+<p>There is a good news.  Shuffle and Sort phase is already coded in the Hadoop MapReduce framework.  You have to code for Map and Reduce phases only.  Depending on the lines of code you write in Map and Reduce phases, your MapReduce code could do anything from a simple Word count to some complex Sentimental Analysis.</p>
+
+<h3>Coding the Mapper</h3>
+
+<p>We will be using the language Java to code our program.  Refer to the sample I/O section of the mapper above.  Remember that one line is called one split.  Also, a mapper does processing on a split at a time.</p>
+
+<p>We will be writing a Java class to do the mapping functionality.  This class will be called <code>MatchMakerMapper</code>.  At this juncture, I must tell you that all classes doing the mapping functionality must extend another class called <code>Mapper</code> and must define a method called <code>map()</code>.</p>
+
+<p>Thus, we are going to write a code, which would approximately look like the one below.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">pubic</span> <span class="kd">class</span> <span class="nc">MatchMakerMapper</span> <span class="kd">extends</span> <span class="n">Mapper</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">map</span><span class="o">(){</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We will add more details to the above skeleton as we progress through this blog post.</p>
+
+<p>We need to specify the input and output data types of the mapper somewhere right?  Even before that, what options do we have for input and output data types?<br/>
+1. Text &ndash; for string data<br/>
+2. IntWritable or LongWritable &ndash; for numeric data</p>
+
+<p>There are other data types as well.  But, let us stick with these data types for the sake of simplicity and problem scoping.</p>
+
+<p>Our Mapper will have the following data types:</p>
+
+<p><strong>Input</strong><br/>
+<em>Key</em> : LongWritable<br/>
+<em>Value</em> : Text</p>
+
+<p><strong>Output</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p>Ask yourself! Are these data types correct for Mapper?  If so, why?</p>
+
+<p>We are going to communicate these data types to our Java program in the following way.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerMapper</span> <span class="kd">extends</span> <span class="n">Mapper</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">map</span><span class="o">(</span><span class="n">LongWritable</span> <span class="n">key</span><span class="o">,</span> <span class="n">Text</span> <span class="n">value</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">){</span>
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After the statement <code>extends Mapper</code>, you write the following things, in the following order:<br/>
+1. Input Key Data Type<br/>
+2. Input Value Data Type<br/>
+3. Output Key Data Type<br/>
+4. Output Value Data Type</p>
+
+<p>Similarly, as first two arguments of the <code>map()</code> method, we write the input key data type and the input value data type.</p>
+
+<p>Now is the time to write the Mapper logic.  The Core Java language acts on Strings and not on Text objects.  To convert Text object to String, we need to invoke <code>toString()</code> method.  In String processing, Java provides a method called <code>split()</code>.  This method is used to split a sentence into its separate words.  Generally speaking, this method is used to split a string using a specific delimiter.</p>
+
+<p>Remember that our input value will be the content of one line of the input file.  For example, <code>jaja jojo</code>.  If this needs to be split into two separate words, we need to invoke <code>split(" ")</code> method on this.  Notice that the delimiting character specified is white-space.</p>
+
+<p>Combining the above two paragraphs, we can write the following piece of code.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="n">String</span><span class="o">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you need to emit an output a key, value pair from mapper, you could just call the <code>output.write()</code> method with the output key and value.</p>
+
+<p>In this mapper, we need to produce two outputs.  So, we need to call <code>output.write()</code> twice.  First time, key will be the first word, that is, <code>names[0]</code> and the second time, the key will be the second word, that is, <code>names[1]</code>.  Value will be 1 both the times.</p>
+
+<p>There is a catch here. <code>names[0]</code> and <code>names[1]</code> are String objects.  But, output key data type is Text.  So, we need to create new Text objects from <code>names[0]</code> and <code>names[1]</code> like <code>new Text(names[0])</code> and <code>new Text(names[1])</code> respectively.</p>
+
+<p>Thus, the output-emitting piece of code is here.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">names</span><span class="o">[</span><span class="mi">0</span><span class="o">]),</span><span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span><span class='line'>  <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">names</span><span class="o">[</span><span class="mi">1</span><span class="o">]),</span><span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Thus, assembling all the disjoint pieces, here is our complete story.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">vivekGanesan</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.LongWritable</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.Text</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.Mapper</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerMapper</span> <span class="kd">extends</span> <span class="n">Mapper</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;</span> <span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">map</span><span class="o">(</span><span class="n">LongWritable</span> <span class="n">key</span><span class="o">,</span> <span class="n">Text</span> <span class="n">value</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="c1">//If more than one word is present, split using white space.</span>
+</span><span class='line'>      <span class="n">String</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">);</span>
+</span><span class='line'>      <span class="c1">//each word contributes to a key-value pair</span>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">words</span><span class="o">[</span><span class="mi">0</span><span class="o">]),</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="k">new</span> <span class="n">Text</span><span class="o">(</span><span class="n">words</span><span class="o">[</span><span class="mi">1</span><span class="o">]),</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Coding the Reducer</h3>
+
+<p>Remember that the reducer&rsquo;s work starts only after &ldquo;Shuffle &amp; Sort&rdquo; has done its work.  That way, each reducer will be called with one group (key,{set of values}) as input at a time.</p>
+
+<p>Similar to the case of Mapper, the Reducer also will have its own input and output data types.</p>
+
+<p><strong>Input</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p><strong>Output</strong><br/>
+<em>Key</em> : Text<br/>
+<em>Value</em> : LongWritable</p>
+
+<p>Similar to the case of Mapper, any class which does the Reducing functionality should extend a <code>Reducer</code> class and should define a <code>reduce()</code> method.</p>
+
+<p>So, our skeleton reducer goes like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerReducer</span> <span class="kd">extends</span> <span class="n">Reducer</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reduce</span><span class="o">(){</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Similar to the case of Mapper, same conventions apply here as to which data types go where.  Thus, we end up having the following code in Reducer.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerReducer</span> <span class="kd">extends</span> <span class="n">Reducer</span><span class="o">&lt;</span><span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;</span> <span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reduce</span><span class="o">(</span><span class="n">Text</span> <span class="n">key</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">&gt;</span> <span class="n">values</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Oops! I forgot to tell you what an <code>Iterable</code> is.  <code>Iterable</code> is anything which can be sequentially traversed.  Thus, our set of {1,1,1,&hellip;,1} falls under the category of <code>Iterable</code>.</p>
+
+<p>In order to traverse an <code>Iterable</code>, we can use a <code>for</code> loop.  In each iteration, we need to increment a counter to count the number of times a person has appeared in the photos.</p>
+
+<p>Thus, we get the following code.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="o">(</span><span class="n">LongWritable</span> <span class="nl">value:</span> <span class="n">values</span><span class="o">){</span>
+</span><span class='line'>      <span class="n">count</span><span class="o">+=</span> <span class="n">value</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we need a single <code>output.write()</code> method to collect the output key and value.  Output key is nothing but the input key, the name of the person.  Output value is the count.  Thus, we would write:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>  <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="n">count</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hereby, we present the full reducer as follows.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">vivekGanesan</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.LongWritable</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.Text</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.Reducer</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerReducer</span> <span class="kd">extends</span> <span class="n">Reducer</span><span class="o">&lt;</span><span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">,</span> <span class="n">Text</span><span class="o">,</span> <span class="n">LongWritable</span><span class="o">&gt;</span> <span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reduce</span><span class="o">(</span><span class="n">Text</span> <span class="n">key</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="o">&gt;</span> <span class="n">values</span><span class="o">,</span> <span class="n">Context</span> <span class="n">output</span><span class="o">)</span>
+</span><span class='line'>          <span class="kd">throws</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="n">LongWritable</span> <span class="nl">value:</span> <span class="n">values</span><span class="o">){</span>
+</span><span class='line'>          <span class="n">count</span><span class="o">+=</span> <span class="n">value</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="k">new</span> <span class="n">LongWritable</span><span class="o">(</span><span class="n">count</span><span class="o">));</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Coding the Driver</h3>
+
+<p>The work does not stop here.  We need to code a common templatized driver class to invoke the Mapper and Reducer.  Here is the templatized driver class called  <code>MatchMakerDriver</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">vivekGanesan</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.conf.Configuration</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.conf.Configured</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.fs.Path</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.IntWritable</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.io.Text</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.Job</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.input.FileInputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.input.TextInputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.output.FileOutputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.mapreduce.lib.output.TextOutputFormat</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.util.Tool</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.hadoop.util.ToolRunner</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MatchMakerDriver</span> <span class="kd">extends</span> <span class="n">Configured</span> <span class="kd">implements</span> <span class="n">Tool</span><span class="o">{</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">ToolRunner</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="k">new</span> <span class="n">Configuration</span><span class="o">(),</span> <span class="k">new</span> <span class="n">MatchMakerDriver</span><span class="o">(),</span> <span class="n">args</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>        
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nd">@Override</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">!=</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;usage: [input] [output]&quot;</span><span class="o">);</span>
+</span><span class='line'>          <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">Job</span> <span class="n">job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Configuration</span><span class="o">());</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setOutputKeyClass</span><span class="o">(</span><span class="n">Text</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setOutputValueClass</span><span class="o">(</span><span class="n">IntWritable</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setMapperClass</span><span class="o">(</span><span class="n">MatchMakerMapper</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setReducerClass</span><span class="o">(</span><span class="n">MatchMakerReducer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setInputFormatClass</span><span class="o">(</span><span class="n">TextInputFormat</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setOutputFormatClass</span><span class="o">(</span><span class="n">TextOutputFormat</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">FileInputFormat</span><span class="o">.</span><span class="na">setInputPaths</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="k">new</span> <span class="n">Path</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]));</span>
+</span><span class='line'>      <span class="n">FileOutputFormat</span><span class="o">.</span><span class="na">setOutputPath</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="k">new</span> <span class="n">Path</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]));</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">setJarByClass</span><span class="o">(</span><span class="n">MatchMakerDriver</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">job</span><span class="o">.</span><span class="na">submit</span><span class="o">();</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here ends our coding effort.</p>
+
+<h3>Packaging the Code</h3>
+
+<p>In order to run in Hadoop environment, the code has to be packaged in the form of a Java Archive (JAR) file.  If you would like to run your code in <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks Sandbox</a> VM, make sure you compile your code using Java 6.</p>
+
+<h3>Running &ndash; Finding the Husband</h3>
+
+<p>The Husband can be found by running the JAR file in a Hadoop environment.  Refer to the <a href="https://github.com/hortonworks/hadoop-tutorials/blob/master/Community/T09_Write_And_Run_Your_Own_MapReduce_Java_Program_Poll_Result_Analysis.md">Hortonworks Community Tutorial</a> for instructions on how to run this in <a href="http://hortonworks.com/products/hortonworks-sandbox/">Hortonworks Sandbox</a> VM.</p>
+
+<h3>Download the Code</h3>
+
+<p>You can download all the code mentioned in this tutorial, along with dependencies from the github repository named <a href="https://github.com/vivganes/what-is-mapreduce-blog-post">vivganes/what-is-mapreduce-blog-post</a>.</p>
+
+<p>I hope that this post was informative and useful.  Feel free to pen down your comments here or to email me at <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#x76;&#x69;&#x76;&#x65;&#x6b;&#x40;&#x76;&#105;&#x76;&#x65;&#x6b;&#x67;&#x61;&#110;&#x65;&#x73;&#97;&#x6e;&#x2e;&#x63;&#111;&#109;&#x2e;">&#x76;&#x69;&#118;&#x65;&#x6b;&#64;&#118;&#105;&#x76;&#x65;&#x6b;&#x67;&#97;&#110;&#101;&#115;&#x61;&#110;&#46;&#99;&#x6f;&#109;&#46;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What is MapReduce? - An Exercise using Activity Based Learning]]></title>
+    <link href="http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/"/>
+    <updated>2014-03-22T18:17:23+05:30</updated>
+    <id>http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning</id>
+    <content type="html"><![CDATA[<p>Whenever I have the chance to explain somebody the process of MapReduce, I find it demoralising that &ldquo;Word Count&rdquo; is the only example found on almost all places in the internet.  I could not recommend any reading material which gives them more insight than a simple word count.  Yet, something good came out of this problem.  I was forced to think of a simple-enough-scenario to apply MapReduce and write a blog post about it.  And, here I am, writing a blog post titled &ldquo;What is MapReduce?&rdquo;.</p>
+
+<p>I am going to let out a super secret that I have been keeping for a while.  I am going to tell you how I would actually teach a person about MapReduce, if I am the teacher.  This blog post is based on &ldquo;Activity Based Learning&rdquo; where the students would do some real activity and learn from the same.</p>
+
+<p>Enough of front matter, let me get on to the topic.  We are going to start with a story that will be the base to our activity.  And, here is that story.</p>
+
+<h2>The Story &ndash; Choosing the Husband</h2>
+
+<p>Long long ago, there was a nation ruled by a mighty king.  He had a beautiful daughter, who was adored by everyone in the kingdom.  As she reached the age of marriage, five young men from the country proposed to her.  Their names were</p>
+
+<ol>
+<li>Jaja</li>
+<li>Jiji</li>
+<li>Juju</li>
+<li>Jojo</li>
+<li>Jinjin</li>
+</ol>
+
+
+<p>Actually, these five young men were already friends of the princess.</p>
+
+<p>Now, the choice rests with the princess.  The princess liked the five equally.  But, she can marry only one among the five.</p>
+
+<p>After a lot of thought process, she came up with a plan.  One fine day, she called all the five young men.  She said, &ldquo;I like each of you.  But, I can marry only one.  I want to choose my better half using a fair process. Here is the plan.  I like to travel a lot.  I want my life partner to have similar likings as me.  So, I will set up secret cameras (come on, don&rsquo;t cry, this is just a story) in the places I like to visit in this country.  These secret cameras will take still photos at random times.  This will go on for one month.&rdquo;</p>
+
+<p>She added, &ldquo;For the next one month, you guys go on with your usual life.  Whoever occurs most in the photos captured by the secret cameras will be my husband.I will announce my husband publicly on the day next to the end of one month.&rdquo;</p>
+
+<p>She also warned, &ldquo;Beware, any foul-plays will automatically disqualify you.&rdquo;</p>
+
+<p>A full month passed by.  The princess checked the photos from cameras and found that there were 16,000 photos in total.  Yes, sixteen thousand!  She has a deadline of one day to announce the results.  How is she going to process all sixteen thousand photos in a day?
+Yes, she is currently facing a Big Data problem.</p>
+
+<p>The princess thought of her problem and came to the only person whom she thought had the brains to help her in this problem, you :)  Yes, she came to you and asked for help.</p>
+
+<h2>The Action &ndash; Choosing the Husband</h2>
+
+<p>The story ends here and our action starts here. For the purpose of simplicity, let us assume we have 16 photos and not 16,000 photos.  You have a team of five people under your command to perform whatever you order them to do.</p>
+
+<h3>Step-1: Identification</h3>
+
+<p>The first and foremost problem is to identify the people in the photos.  For that, we need reference photos of those five people.  Here is a single image, which shows the faces of all the five guys, along with their names.</p>
+
+<p><img class="center" src="http://vivekganesan.com/images/character_names.png"></p>
+
+<p>For a successful identification of a person in any photo, play close attention to the following details.</p>
+
+<ol>
+<li>The Hair style</li>
+<li>Does the person wear spectacles or not</li>
+<li>Beard</li>
+</ol>
+
+
+<p>These three features are enough to identify a person in the photos.</p>
+
+<p>Now, coming to the photos, here are they.  I have made these photos in such a way that each photo contains two and only two of our guys.  There might be a third person in some photos.  But, that third person will not be one of our guys and you can ignore him.</p>
+
+<p><img class="center" src="http://vivekganesan.com/images/1.png">
+<img class="center" src="http://vivekganesan.com/images/2.png">
+<img class="center" src="http://vivekganesan.com/images/3.png">
+<img class="center" src="http://vivekganesan.com/images/4.png">
+<img class="center" src="http://vivekganesan.com/images/5.png">
+<img class="center" src="http://vivekganesan.com/images/6.png">
+<img class="center" src="http://vivekganesan.com/images/7.png">
+<img class="center" src="http://vivekganesan.com/images/8.png">
+<img class="center" src="http://vivekganesan.com/images/9.png">
+<img class="center" src="http://vivekganesan.com/images/10.png">
+<img class="center" src="http://vivekganesan.com/images/11.png">
+<img class="center" src="http://vivekganesan.com/images/12.png">
+<img class="center" src="http://vivekganesan.com/images/13.png">
+<img class="center" src="http://vivekganesan.com/images/14.png">
+<img class="center" src="http://vivekganesan.com/images/15.png">
+<img class="center" src="http://vivekganesan.com/images/16.png"></p>
+
+<p>Split your team into two sub-teams.  Give 8 photos to one sub-team and the remaining 8 to the next sub-team.  Ask the teams to identify the persons in the photos and record it in a sheet of paper.</p>
+
+<p>STOP HERE! There is a rule which I forgot to tell you.  The sub-teams have to record the identification in a particular format.  For each person they identify in each photo, an entry has to be made like this in the sheet of paper given to them.</p>
+
+<figure class='code'><figcaption><span>Contents of the sheet</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>&lt;name&gt; - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For example, in the first photo, if the sub-team finds Jaja and Jojo, then the sheet should contain entries as follows.</p>
+
+<figure class='code'><figcaption><span>Contents of the Sheet</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - 1
+</span><span class='line'>jojo - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the second photo, if Jaja is found again, a fresh entry has to be made in the sheet and the count of the already existing <code>jaja</code> should not be touched.  So, for example, if the second photo contains Jaja and Jiji, then, the sheet must look like the one below.</p>
+
+<figure class='code'><figcaption><span>Contents of the Sheet</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>jaja - 1
+</span><span class='line'>jojo - 1
+</span><span class='line'>jaja - 1
+</span><span class='line'>jiji - 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, ask the sub-teams to do their job and once they are done with all the eight photos given to each of the sub-teams, there will be 16 lines in each sheet of paper.  This is because, each photo will certainly contain two of our guys.</p>
+
+<h3>Step-2: Grouping</h3>
+
+<p>Now, collect the two sheets of papers with 16 lines each from the sub-teams.  Remember that your team size is 5.  Now, lets assign work to each individual and you will also do a part of the work.</p>
+
+<p>Take five blank sheets of paper and write each guy&rsquo;s name on the top of the sheet.  For example, the first sheet will have <code>JAJA</code> written on top of it, the second sheet will have <code>JIJI</code> and so on.</p>
+
+<p>Give each sheet to each person in the team.  So, each person in your team will end up having one sheet each.</p>
+
+<p>Remember that you have two sheets as output of step-1.  You, the commander, should read-out each line in those sheets one by one.  And, the team members, should listen for their guy&rsquo;s mention.</p>
+
+<p>For example, you shout &ldquo;jaja &ndash; 1&rdquo;, then, the guy who holds the JAJA paper would write <code>1</code> in his paper.  Next, you shout &ldquo;jojo &ndash; 1&rdquo; the, the guy who holds the JOJO paper would write <code>1</code> in his paper.  If a name repeats, another <code>1</code> has to be written.  The existing <code>1</code> should never be disturbed.</p>
+
+<p>Thus, following the above rules, the JAJA sheet could possibly look like the one below.</p>
+
+<figure class='code'><figcaption><span>JAJA</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>1
+</span><span class='line'>1
+</span><span class='line'>1
+</span><span class='line'>1
+</span><span class='line'>1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step-3: Consolidating</h3>
+
+<p>The next step is the easiest one.  Now, collect the sheet of papers from your team members and distribute the same sheets but to different people.  In short, the person holding JAJA sheet in second step should not hold JAJA sheet in this step.</p>
+
+<p>Ask the five team members to count the number of <code>1</code>s in each sheet and write the number in BIG letters in the reverse side of the same sheet.  Also, ask them to write the guy&rsquo;s name in BIG letters in the reverse side of the sheet also.</p>
+
+<p>So, for example, if JAJA paper had 5 ones, the reverse of that paper would look like the following.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>JAJA
+</span><span class='line'>========
+</span><span class='line'>5
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, at the end of this step, you would know how many times each person has appeared in the photos and you can tell the princess who her husband would be.</p>
+
+<p>An interesting fact is that, without even knowing, you have used MapReduce manually to select the husband of the princess.</p>
+
+<h2>What is MapReduce?</h2>
+
+<p>MapReduce is a framework/philosophy/algorithm/methodology which helps us solve certain complex problems by divide-and-rule technique.</p>
+
+<p>MapReduce assumes that you have more than one workers, who can do the work for you.  In our case, we had 5 workers and 1 master.  MapReduce takes the advantage of parallel processing done by many workers so that more work is done in less time.</p>
+
+<p>Not all jobs can be parallelly executed.  Only certain jobs can be executed parallely.  In the example above, consolidation and identification cannot be parallely executed.  It is necessary that consolidation can be done only after identification and grouping has happened.</p>
+
+<h2>Phases of MapReduce</h2>
+
+<p>Similar to our exercise above, MapReduce has three phases.</p>
+
+<h3>Phase 1 &ndash; Mapping</h3>
+
+<p>Mapping is nothing but the identification.  In our example, you mapped a number, that is, 1 to a name.  Or, you put the number 1 in the bucket named &lsquo;JAJA&rsquo;.  This association or identification is called mapping.</p>
+
+<p>Output of mapper is always a set of key-value pairs.  Here, in our example, key is the name of the person and value is always one.</p>
+
+<h3>Phase 2 &ndash; Shuffle &amp; Sort</h3>
+
+<p>Shuffle and sort is nothing but grouping all the mapped values according to the key.  Remember, the key in the mapper is the name of the person.  In our example, we grouped all the values, that is, the ones under the persons&#8217; names.</p>
+
+<p>We could also have chosen to sort the groups based on key, that is the name of the person.  That way, we would have arranged the papers in the order Jaja, Jiji, Jinjin, Jojo and Juju if we followed alphabetic sorting.</p>
+
+<p>The output of shuffle &amp; sort phase is always a set of key-value pairs where each value is again a set of values.  For example, Jaja is the key and value = {1,1,1,1,1}</p>
+
+<h3>Phase 3 &ndash; Reducing</h3>
+
+<p>Reducing is the job of consolidating several numbers(ones) into a single number for each group resulting from Phase 2.  This final single number for a group is the net result targeted by the problem, with which we can arrive at a final solution to the problem.</p>
+
+<p>For example, looking at the numbers on the reverse of the sheet, we can know who has appeared most number of times in the photos and hence, we could advise the princess about who her husband would be.</p>
+
+<h3>A Note on Parallel Processing</h3>
+
+<p>Throughout our entire process, the following parallel processings took place.<br/>
+1. Parallel processing of sub-teams (Mappers) in Phase &ndash; 1<br/>
+2. Parallel processing of team members (Reducers) in Phase &ndash; 3</p>
+
+<p>In other words, Phase &ndash; 2 is the only non-parallel process in the whole work flow.  If we had 16,000 photos also, it would just be a matter of number of workers to solve the problem within one day.</p>
+
+<p>Thus, adjusting the number of workers, we can arrive at a solution today, tomorrow or next week.  This is called scaling.  MapReduce is the hot topic in BigData Processing because it can scale.</p>
+
+<p>That&rsquo;s it from my side for this post.  You can refer to all the materials referred in this post in the github repository named <a href="https://github.com/vivganes/what-is-mapreduce-blog-post">vivganes/what-is-mapreduce-blog-post</a></p>
+
+<p>Hope this blog post was interesting and enlightening.  I am eager to hear your comments.  Please post your comments here or email me at <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#118;&#105;&#118;&#x65;&#x6b;&#64;&#118;&#105;&#x76;&#101;&#107;&#103;&#97;&#110;&#101;&#x73;&#97;&#x6e;&#46;&#99;&#111;&#109;&#46;">&#118;&#105;&#118;&#101;&#107;&#64;&#x76;&#x69;&#118;&#x65;&#107;&#x67;&#97;&#110;&#101;&#115;&#97;&#110;&#46;&#99;&#x6f;&#109;&#x2e;</a></p>
+
+<p>P.S.: I snap-shotted the pictures from <a href="https://apps.facebook.com/bitstrips/">BitStrips Facebook App</a></p>
+]]></content>
+  </entry>
+  
+</feed>

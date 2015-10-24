@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: agile-adoption | Vivek Ganesan]]></title>
+  <link href="http://vivekganesan.com/blog/categories/agile-adoption/atom.xml" rel="self"/>
+  <link href="http://vivekganesan.com/"/>
+  <updated>2015-10-24T11:53:43+05:30</updated>
+  <id>http://vivekganesan.com/</id>
+  <author>
+    <name><![CDATA[Vivek Ganesan]]></name>
+    <email><![CDATA[vivek@vivekganesan.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Agile India 2015 - Scaling Agile Adoption - A Compendium]]></title>
+    <link href="http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-1/"/>
+    <updated>2015-03-29T10:23:33+05:30</updated>
+    <id>http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-1</id>
+    <content type="html"><![CDATA[<p>Ever heard of an eye-opener?  Ever experienced it?  I just had one recently.  And, that eye-opener lasted for full 4 days!  I am talking about an <a href="http://2015.agileindia.org/">Agile India 2015</a> &ndash; An agile conference that I attended over the past 4 days.  The first two days were dedicated to the track &ldquo;Scaling Agile Adoption&rdquo; and the next two days were for &ldquo;Agile Life Cycle&rdquo;</p>
+
+<p>I realize from my personal experiences that the learnings of a conference are like water held in hands.  Over time, they trickle drop by drop to oblivion without you realizing them.  So, I decided to make a compendium of my experience at Agile India 2015 as soon as I can.  And, here it is!</p>
+
+<p>This post is aimed at providing a gist of <strong>&ldquo;Scaling Agile Adoption&rdquo;</strong> track of the conference.</p>
+
+<h2>Day -1</h2>
+
+<p>The day started with Diana Larsen&rsquo;s keynote <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Dancing along the Agile Fluency Path</a> where I was exposed, for the first time in life, to the concept of <a href="http://martinfowler.com/articles/agileFluency.html">Agile Fluency Model</a>.  This keynote made me realize that the &ldquo;Scrum&rdquo; is a part of a larger picture.
+<img src="https://lh5.googleusercontent.com/xOWEpcL2_-gxO01GRJtRNpA5ZC1_eBI9M7NGAJ9bSDg=w865-h577-no" alt="Diana Larsen" /></p>
+
+<p>During the next session, <a href="http://confengine.com/user/ashish-parkhi">Ashish Parkhi</a> and <a href="http://nareshjain.com/about">Naresh Jain</a> overwhelmed the audience with a report on how they gamified Agile development in a team, <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">by making work a game</a>. And, that is not the end of it.  The most interesting part was the Q&amp;A time where audience asked what are the negative things that they faced because of this game.  For all over-enthusiastic people like me, this was most informative that we should have a misuse-prevention strategy in advance before rolling out anything like this.</p>
+
+<p>In another talk, <a href="http://confengine.com/user/seshadri-veeraraghavan">Seshadri Veeraraghavan</a> explained about how <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">cultural and behavioral tendencies</a> can affect work and also provided some suggestions on how to tackle them.  I got a positive inspiration to promote experimentation to change the status quo from this talk.</p>
+
+<p>In his session <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">To Pair or Not to Pair</a>, <a href="http://www.twitter.com/@kaaykaaybee">@kaaykaaybee</a> explained the importance of pair programming, comparing it with pairing of wine and cheese.  His ending slide says &ldquo;<em>Wine doesn&rsquo;t judge me, neither should you</em>&rdquo; :)</p>
+
+<p>Big Agile &ndash; a session by <a href="http://www.twitter.com/@sriramnarayan">Sriram Narayan</a> stressed the importance of <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">organizing the continuous delivery by outcome</a> rather than activity.</p>
+
+<h2>Day -2</h2>
+
+<p><a href="http://twitter.com/@jeffpatton">Jeff Patton</a> rocked the stage with his keynote &ndash; <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Won&rsquo;t Get Fooled Again</a>.  His theory of what makes a better user experience amazed me.  The pyramid of <a href="https://www.slideshare.net/slideshow/embed_code/46600236">Utility, Usability and Aesthetics</a> was a nice and  usable theory in itself.</p>
+
+<p>The current model of QA in many organizations was challenged by the inverted pyramid presented in the session &ndash; <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Death of Inspection</a>.  Stress on collaboration over war between developers and testers was the key takeaway.</p>
+
+<p><a href="http://twitter.com/@asidky">Ahmed Sidky</a> aka Doctor Agile blew our minds away by a revolutionary concept of <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Value teams</a>.  Value team is a concept where instead of product management and delivery spread across two teams, they merge into a single team for better results.
+<img src="https://lh4.googleusercontent.com/-PVVqeAu3yiE/VRlFir7jf-I/AAAAAAAAFmQ/u3NURTXbc44/w865-h577-no/REA70254.JPG" alt="Ahmed Sidky" /></p>
+
+<p><a href="http://confengine.com/user/nanda-lankalapalli">Nanda Lankalapalli</a>, in another session, explained how <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">happy teams are key to success</a>.  The talk explained how allowing team members to choose their own teams helped an organization to boost its success.  The talk was overwhelming in its simplicity and value.</p>
+
+<p><a href="http://confengine.com/user/alexey-pikulev">Alexey Pikulev</a>&rsquo;s workshop on <a href="http://confengine.com/agile-india-2015/schedule#session-4223-info">Growing Trust</a> was just awesome and educating.  It clearly helped me understanding the meaning of trust and why it is important.  His exercise questions on how to win back lost trust were very helpful by encouraging us to come up with a solution to win back trust.</p>
+
+<p>Needless to say, I got a lot of new connections and goodies from the stalls at conference.  In addition to that, the food was just superb!</p>
+]]></content>
+  </entry>
+  
+</feed>
