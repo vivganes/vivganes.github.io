@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | Vivek Ganesan]]></title>
   <link href="http://vivekganesan.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://vivekganesan.com/"/>
-  <updated>2015-10-24T12:07:00+05:30</updated>
+  <updated>2015-10-24T12:14:16+05:30</updated>
   <id>http://vivekganesan.com/</id>
   <author>
     <name><![CDATA[Vivek Ganesan]]></name>
@@ -408,7 +408,7 @@ public int run(String[] args) throws Exception {
 
 <p>You can download all the code mentioned in this tutorial, along with dependencies from the github repository named <a href="https://github.com/vivganes/what-is-mapreduce-blog-post">vivganes/what-is-mapreduce-blog-post</a>.</p>
 
-<p>I hope that this post was informative and useful.  Feel free to pen down your comments here or to email me at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#118;&#105;&#118;&#x65;&#107;&#64;&#118;&#x69;&#118;&#101;&#x6b;&#103;&#x61;&#110;&#101;&#x73;&#x61;&#110;&#x2e;&#99;&#x6f;&#109;&#46;">&#x76;&#105;&#118;&#x65;&#107;&#x40;&#x76;&#105;&#x76;&#101;&#107;&#x67;&#97;&#110;&#x65;&#x73;&#x61;&#x6e;&#x2e;&#x63;&#111;&#x6d;&#x2e;</a></p>
+<p>I hope that this post was informative and useful.  Feel free to pen down your comments here or to email me at <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#118;&#105;&#118;&#101;&#107;&#x40;&#118;&#105;&#118;&#101;&#x6b;&#x67;&#x61;&#x6e;&#101;&#115;&#x61;&#110;&#46;&#99;&#x6f;&#x6d;&#x2e;">&#118;&#105;&#x76;&#101;&#x6b;&#64;&#118;&#x69;&#118;&#101;&#x6b;&#103;&#97;&#110;&#101;&#115;&#97;&#110;&#46;&#x63;&#111;&#x6d;&#x2e;</a></p>
 ]]></content>
   </entry>
   
