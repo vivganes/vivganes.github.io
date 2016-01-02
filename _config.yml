@@ -1,0 +1,63 @@
+# Site wide configuration
+
+title:            Vivek Ganesan
+locale:           en_US
+url:
+
+
+# Jekyll configuration
+
+permalink:   :title/
+markdown:    kramdown
+highlighter: pygments.rb
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - pygments
+  - kramdown
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+
+# Site owner
+owner:
+  name: "Vivek Ganesan"
+  avatar: profile.png
+  bio: "A techie, a teacher, a learner, a blah, blah and a blah!"
+  email: vivek@vivekganesan.com
+  disqus-shortname: vivekganesan
+  twitter: vivek_ganesan
+  facebook: caliberoviv
+  google:
+    plus: caliberoviv
+    analytics: UA-21067431-8
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: vivganes
+  stackoverflow: 3270643/vivek-ganesan
+  linkedin: vivganes
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
