@@ -47,7 +47,7 @@ TOTAL - 66,500 INR approx in case of laptop and 1,06,500 INR approx in case of M
 
 ### Advantages
 1. Easy to setup
-2, Less power consumption than Option 1
+2. Less power consumption than Option 1
 3. Provides inbuilt power backup in case of power outage.
 
 ### Disadvantages
