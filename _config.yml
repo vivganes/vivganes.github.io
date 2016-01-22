@@ -9,7 +9,6 @@ url:
 
 permalink:   :title/
 markdown:    kramdown
-highlighter: pygments.rb
 sass:
   sass_dir: _sass
   style: compressed
