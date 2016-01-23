@@ -7,9 +7,12 @@ comments: true
 date: "2016-01-22 05:47:23 +0530"
 ---
 
+
 Agile Team Wallboards make an agile team's workspace meaningful.  Wallboard is an information radiator mounted on wall (pretty self-explanatory, huh!).  Wallboard displays relevant information, aggregated from multiple sources, to help in making decisions regarding daily work.
 
-Team Wallboard is typically electronic, powered by widgets and dashboards available in popular Agile tools like JIRA, Rally, etc.  There are teams which have a manually maintained wallboard as well.
+Team Wallboard is typically electronic, powered by widgets and dashboards available in popular Agile tools like JIRA, Rally, etc. There are some (lucky) teams which have a manually maintained wallboard as well.
+
+This post talks more about electronic form of the Wallboard.
 
 ##Why is a Wallboard needed?
 Wallboard serves two sets of people in the organization:
