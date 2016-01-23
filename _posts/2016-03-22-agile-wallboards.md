@@ -104,6 +104,7 @@ Instead of hard disk, a SD Card serves as a primary memory.  The OS is light-wei
 ![raspi.jpg]({{site.baseurl}}/images/raspi.jpg)
 ![raspi2.jpg]({{site.baseurl}}/images/raspi2.jpg)
 
+
 ### Fixed Costs
 1. LCD Monitor -  5000 INR approx
 2. Raspberry Pi Kit - 4,000 INR approx
