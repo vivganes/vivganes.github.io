@@ -18,7 +18,7 @@ Wallboard serves two sets of people in the organization:
 
 2. **Everyone else**- No one needs to go and ask about iteration's health from team members or scrum master.  They can just spend some minutes looking at the wallboard and they have the metrics.
 
-##What all needs to be a part of Team Wallboard?
+##What information can be included in Team Wallboard?
 Anything that helps!  You can include burn down charts, bug counts, days-until-iteration-end counters, etc.  
 
 The idea is to evolve the design of wallboard's information over time. You need to discuss the design improvements in wallboard during retrospectives.
