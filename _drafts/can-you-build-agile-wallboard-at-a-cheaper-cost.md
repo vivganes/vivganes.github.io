@@ -4,10 +4,9 @@ title: "Agile Wallboards - What, Why and How?"
 layout: post
 "section-type": post
 comments: true
+date: "2016-01-22 05:47:23 +0530"
 ---
 
-
-## Agile Team Wallboards - What, Why and How?
 
 Agile Team Wallboards make an agile team's workspace meaningful.  Wallboard is an information radiator mounted on wall (pretty self-explanatory, huh!).  Wallboard displays relevant information, aggregated from multiple sources, to help in making decisions regarding daily work.
 
