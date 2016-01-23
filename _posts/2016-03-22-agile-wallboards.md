@@ -27,7 +27,7 @@ The idea is to evolve the design of wallboard's information over time. You need 
 
 ## Option 1 : Wallboard using an Always-on Whining Machine
 
-Anyone who thinks about wallboard setup will get this in their mind the first time.  This is the most basic setup.  All this contains is a LCD/LED monitor hooked up to an age-old desktop computer.
+This is the most basic setup.  All this contains is a LCD/LED monitor hooked up to an age-old desktop computer.
 
 Let's do a quick cost analysis of this setup
 ### Fixed Costs
@@ -119,3 +119,7 @@ Total - 9,000 INR approx
 ### Disadvantages
 1. Wifi Connectivity in Raspberry Pi is known to [get complicated](http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/) under certain circumstances
 2. Might need to buy a casing in case of crowded places otherwise, prone to mishandling as all the parts are exposed.
+
+I prefer the Raspberry Pi setup and I have tried this with more than one team. I am planning to write a separate blog post on how to setup a Team wallboard using Raspberry Pi and JIRA.
+
+What kind of wallboard does your team use?  Share your thoughts on this topic.
