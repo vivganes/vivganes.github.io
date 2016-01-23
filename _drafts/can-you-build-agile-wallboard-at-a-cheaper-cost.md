@@ -5,11 +5,23 @@ layout: post
 ---
 
 
-## Agile Wallboards - What, Why and How?
+## Agile Team Wallboards - What, Why and How?
 
-If your team works using any Agile methodology, you must have already understood that transparency is the key to effectiveness.  Information radiator is a tool which brings in transparency about the work to anyone.
+Agile Team Wallboards make an agile team's workspace meaningful.  Wallboard is an information radiator mounted on wall (pretty self-explanatory, huh!).  Wallboard displays relevant information, aggregated from multiple sources, to help in making decisions regarding daily work.
 
-In this blog post, I would like to quote some traditional wallboard designs along with their costs and how we can run a wallboard with a fraction of the traditional wallboard cost.
+Team Wallboard is typically electronic, powered by widgets and dashboards available in popular Agile tools like JIRA, Rally, etc.  There are teams which have a manually maintained wallboard as well.
+
+##Why is a Wallboard needed?
+Wallboard serves two sets of people in the organization:
+1. **The team** - The team uses real data to make daily decisions to reach their iteration goal.
+2. **Everyone else**- No one needs to go and ask about iteration's health from team members or scrum master.  They can just spend some minutes looking at the wallboard and they have the metrics.
+
+##What all needs to be a part of Team Wallboard?
+Anything that helps!  You can include burn down charts, bug counts, days-until-iteration-end counters, etc.  
+
+The idea is to evolve the design of wallboard's information over time. You need to discuss the design improvements in wallboard during retrospectives.
+
+#How to setup a Team Wallboard?
 
 ## Option 1 : Wallboard using an Always-on Whining Machine
 
@@ -66,3 +78,10 @@ Let's do the cost analysis of this setup
 ### Fixed Costs
 1. LCD Monitor -  5000 INR approx
 2. Apple TV - 13,000 INR approx
+Total - 18,000 INR approx
+
+### Variable Costs
+1. Power consumption
+
+## Option 4: Raspberry Pi Wallboard
+Raspberry Pi is a credit-card sized computer that runs on Linux. It is generally 
