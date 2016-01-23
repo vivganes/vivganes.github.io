@@ -1,7 +1,7 @@
 ---
 published: false
 title: "Agile Wallboards - What, Why and How?"
-layout: posts
+layout: post
 ---
 
 
