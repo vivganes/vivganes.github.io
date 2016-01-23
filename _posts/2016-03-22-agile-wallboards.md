@@ -13,7 +13,9 @@ Team Wallboard is typically electronic, powered by widgets and dashboards availa
 
 ##Why is a Wallboard needed?
 Wallboard serves two sets of people in the organization:
+
 1. **The team** - The team uses real data to make daily decisions to reach their iteration goal.
+
 2. **Everyone else**- No one needs to go and ask about iteration's health from team members or scrum master.  They can just spend some minutes looking at the wallboard and they have the metrics.
 
 ##What all needs to be a part of Team Wallboard?
