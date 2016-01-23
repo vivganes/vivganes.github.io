@@ -53,6 +53,7 @@ In this option, we replace the desktop computer with an always-on laptop.  LCD/L
 Some organizations replace the laptop with a Macbook.  In that case, you might need appropriate Mac adapters as well.
 
 Cost Analysis of this setup is as follows
+
 ### Fixed Costs
 1. LCD Monitor - 5000 INR approx.
 2. Laptop - 60,000 INR (or Macbook - 1,00,000 INR) approx.
