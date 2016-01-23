@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: "Agile Wallboards - What, Why and How?"
 layout: post
 "section-type": post
