@@ -26,7 +26,7 @@ Unlike real world, the driver cannot signal to potential vehicles on the other r
 
 However, in the code universe, the driver does not die or get injured when another vehicle crashes into his.  He can just repair his car and proceed ahead fully alive and able!
 
-## What if build breakage hurts the developer?
+## What if build breakage hurts the developer's career?
 
 If the build breakage cannot be tolerated, then the driver could stop the car before the merge, get down, look for oncoming vehicles and then drive to the merge if none found.  Hey, but what if a lightning-speed Ferrari comes on the road just at the moment when the driver went back to car after reassuring himself that there were no vehicles approaching from the other road?  In the world of shared codebase, particularly in enterprises, such lightning-speed Ferraris are more common.  So, if build breakage is frowned upon, the developer slows down and even after that he cannot be sure not to break the build - blame the Ferraris!  Imagine what could happen to the motivation levels of that developer if the trend continues!
 
