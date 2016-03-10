@@ -8,8 +8,6 @@ title: "Do You Chastise Build Breakers?"
 ---
 
 
-## Do You Chastise Build Breakers?
-
 Continuous Integration is a powerful way to identify and eliminate certain risks, particularly when multiple teams are rallying towards a planned release.  Even if you are not working on a planned release, Continuous Integration will help you to cut-out a release sooner than you would if you did not have CI.
 
 When organizations or teams start adopting Continuous Integration for the first time, they develop an untold habit to chastise the _build breaker_, whenever a build breaks. Most of the time, the reprimanded _build breaker_ is a person and not a thing, a machine or a process :)
