@@ -4,7 +4,7 @@ layout: post
 "section-type": post
 comments: true
 date: "2016-03-10 06:30:23 +0530"
-title: "Is it Correct to Chastise Build Breakers?"
+title: "Is Chastising Build Breakers Correct?"
 ---
 
 
