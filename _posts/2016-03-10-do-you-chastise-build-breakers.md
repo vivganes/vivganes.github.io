@@ -41,6 +41,7 @@ Many a times, it turns out to be that the developer’s road does not have the s
 ## Types of CI Failures
 
 Shortly put, CI failures can be of two categories:
+
 1. Unavoidable
 2. Avoidable
 
