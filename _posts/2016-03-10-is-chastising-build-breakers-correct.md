@@ -7,7 +7,7 @@ date: "2016-03-10 06:30:23 +0530"
 title: "Is Chastising Build Breakers Correct?"
 ---
 _**
-[Update: Recently, I delivered a talk at Discuss Agile Conference Bangalore 2016 about the same subject.  Here are the slides: http://ankitjain.info/ankit/2016/04/17/a-mature-developer-expectations/ ]**_
+[Update: Recently, I delivered a talk at Discuss Agile Conference Bangalore 2016 about the same subject.  Here are [the slides](http://bit.ly/ci-failures) ]**_
 
 Continuous Integration is a powerful way to identify and eliminate certain risks, particularly when multiple teams are rallying towards a planned release.  Even if you are not working on a planned release, Continuous Integration will help you to cut-out a release sooner than you would if you did not have CI.
 
