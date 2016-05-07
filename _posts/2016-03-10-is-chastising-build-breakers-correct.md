@@ -23,6 +23,9 @@ Let us start by questioning ourselves how much control does a developer have on 
 
 I prefer to visualize the code branches as roads in a city.  Any developer who is working towards a commit is like a driver driving his car in the direction of a road merge - a point where his road merges with another bigger road.  
 
+![Screen Shot 2016-05-07 at 7.44.17 AM.png]({{site.baseurl}}/images/Screen Shot 2016-05-07 at 7.44.17 AM.png)
+
+
 Unlike real world, the driver cannot signal to potential vehicles on the other road using lights, sound or anything.  He has no other option than to directly drive into the road-merge just hoping that he will not get hit by another vehicle on the other road.  See? The developer has very little control on whether the build will break in the CI system or not. 
 
 However, in the code universe, the driver does not die or get injured when another vehicle crashes into his.  He can just repair his car and proceed ahead fully alive and able!
