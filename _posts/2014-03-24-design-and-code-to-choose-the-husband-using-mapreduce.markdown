@@ -189,9 +189,9 @@ Remember that our input value will be the content of one line of the input file.
 
 Combining the above two paragraphs, we can write the following piece of code.
 
-<pre><code data-trim class="java">
+{% highlight java %}
   String[] names = value.toString().split(" ");
-</code></pre>
+{% endhighlight %}
 
 If you need to emit an output a key, value pair from mapper, you could just call the `output.write()` method with the output key and value.  
 
@@ -201,14 +201,14 @@ There is a catch here. `names[0]` and `names[1]` are String objects.  But, outpu
 
 Thus, the output-emitting piece of code is here.
 
-<pre><code data-trim class="java">
+{% highlight java %}
   output.write(new Text(names[0]),new LongWritable(1));
   output.write(new Text(names[1]),new LongWritable(1));
-</code></pre>
+{% endhighlight %}
 
 Thus, assembling all the disjoint pieces, here is our complete story.
 
-<pre><code data-trim class="java">
+{% highlight java %}
 package com.vivekGanesan;
 
 import java.io.IOException;
@@ -230,7 +230,7 @@ public class MatchMakerMapper extends Mapper&lt;LongWritable, Text, Text, LongWr
 		output.write(new Text(words[1]), new LongWritable(1));
 	}
 }
-</code></pre>
+{% endhighlight %}
 
 ### Coding the Reducer
 Remember that the reducer's work starts only after "Shuffle & Sort" has done its work.  That way, each reducer will be called with one group (key,{set of values}) as input at a time.
@@ -249,7 +249,7 @@ Similar to the case of Mapper, any class which does the Reducing functionality s
 
 So, our skeleton reducer goes like this:
 
-<pre><code data-trim class="java">
+{% highlight java %}
 public class MatchMakerReducer extends Reducer {
   
   public void reduce(){
@@ -257,18 +257,18 @@ public class MatchMakerReducer extends Reducer {
   }
 
 }
-</code></pre>
+{% endhighlight %}
 
 Similar to the case of Mapper, same conventions apply here as to which data types go where.  Thus, we end up having the following code in Reducer.
 
-<pre><code>
+{% highlight java %}
 public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, LongWritable&gt; {	
 	@Override
 	public void reduce(Text key, Iterable&lt;LongWritable&gt; values, Context output) {
 		
 	}
 }
-</code></pre>
+{% endhighlight %}
 
 Oops! I forgot to tell you what an `Iterable` is.  `Iterable` is anything which can be sequentially traversed.  Thus, our set of {1,1,1,...,1} falls under the category of `Iterable`.
 
@@ -276,22 +276,22 @@ In order to traverse an `Iterable`, we can use a `for` loop.  In each iteration,
 
 Thus, we get the following code.
 
-<pre><code data-trim class="java">
+{% highlight java %}
         int count = 0;
 		for(LongWritable value: values){
 			count+= value.get();
 		}
-</code></pre>
+{% endhighlight %}
 
 Then, we need a single `output.write()` method to collect the output key and value.  Output key is nothing but the input key, the name of the person.  Output value is the count.  Thus, we would write:
 
-<pre><code data-trim class="java">
+{% highlight java %}
       output.write(key, new LongWritable(count));
-</code></pre>
+{% endhighlight %}
 
 Hereby, we present the full reducer as follows.
 
-<pre><code data-trim class="java">
+{% highlight java %}
 package com.vivekGanesan;
 
 import java.io.IOException;
@@ -311,12 +311,12 @@ public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, Long
 		output.write(key, new LongWritable(count));
 	}
 }
-</code></pre>
+{% endhighlight %}
 
 ### Coding the Driver
 The work does not stop here.  We need to code a common templatized driver class to invoke the Mapper and Reducer.  Here is the templatized driver class called  `MatchMakerDriver`.
 
-<pre><code data-trim class="java">
+{% highlight java %}
 package com.vivekGanesan;
 
 import org.apache.hadoop.conf.Configuration;
@@ -366,7 +366,7 @@ public class MatchMakerDriver extends Configured implements Tool{
 		return 0;
 	}
 }
-</code></pre>
+{% endhighlight %}
 
 Here ends our coding effort.
 
