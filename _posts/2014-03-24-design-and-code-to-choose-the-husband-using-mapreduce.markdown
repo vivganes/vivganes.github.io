@@ -373,10 +373,10 @@ Here ends our coding effort.
 ### Packaging the Code
 In order to run in Hadoop environment, the code has to be packaged in the form of a Java Archive (JAR) file.  If you would like to run your code in [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/) VM, make sure you compile your code using Java 6.
 
-###Running - Finding the Husband
+### Running - Finding the Husband
 The Husband can be found by running the JAR file in a Hadoop environment.  Refer to the [Hortonworks Community Tutorial](https://github.com/hortonworks/hadoop-tutorials/blob/master/Community/T09_Write_And_Run_Your_Own_MapReduce_Java_Program_Poll_Result_Analysis.md) for instructions on how to run this in [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/) VM.
 
-###Download the Code
+### Download the Code
 You can download all the code mentioned in this tutorial, along with dependencies from the github repository named [vivganes/what-is-mapreduce-blog-post](https://github.com/vivganes/what-is-mapreduce-blog-post).
 
 
