@@ -121,6 +121,7 @@ Thus, following the above rules, the JAJA sheet could possibly look like the one
 1
 ```
 ### Step-3: Consolidating
+
 The next step is the easiest one.  Now, collect the sheet of papers from your team members and distribute the same sheets but to different people.  In short, the person holding JAJA sheet in second step should not hold JAJA sheet in this step.
 
 Ask the five team members to count the number of `1`s in each sheet and write the number in BIG letters in the reverse side of the same sheet.  Also, ask them to write the guy's name in BIG letters in the reverse side of the sheet also.
