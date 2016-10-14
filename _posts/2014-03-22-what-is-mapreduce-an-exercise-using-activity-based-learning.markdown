@@ -1,10 +1,11 @@
 ---
 layout: post
 section-type: post
-title: "What is MapReduce? - An Exercise using Activity Based Learning"
-date: 2014-03-22 18:17:23 +0530
+title: What is MapReduce? - An Exercise using Activity Based Learning
+date: '2014-03-22 18:17:23 +0530'
 comments: true
 categories: hadoop mapreduce teaching
+published: true
 ---
 Whenever I have the chance to explain somebody the process of MapReduce, I find it demoralising that "Word Count" is the only example found on almost all places in the internet.  I could not recommend any reading material which gives them more insight than a simple word count.  Yet, something good came out of this problem.  I was forced to think of a simple-enough-scenario to apply MapReduce and write a blog post about it.  And, here I am, writing a blog post titled "What is MapReduce?".
 
@@ -12,7 +13,7 @@ I am going to let out a super secret that I have been keeping for a while.  I am
 
 Enough of front matter, let me get on to the topic.  We are going to start with a story that will be the base to our activity.  And, here is that story.
 
-##The Story - Choosing the Husband
+## The Story - Choosing the Husband
 
 Long long ago, there was a nation ruled by a mighty king.  He had a beautiful daughter, who was adored by everyone in the kingdom.  As she reached the age of marriage, five young men from the country proposed to her.  Their names were  
 
@@ -37,11 +38,11 @@ Yes, she is currently facing a Big Data problem.
 
 The princess thought of her problem and came to the only person whom she thought had the brains to help her in this problem, you :)  Yes, she came to you and asked for help.
 
-##The Action - Choosing the Husband 
+## The Action - Choosing the Husband 
 
 The story ends here and our action starts here. For the purpose of simplicity, let us assume we have 16 photos and not 16,000 photos.  You have a team of five people under your command to perform whatever you order them to do.
 
-###Step-1: Identification
+### Step-1: Identification
 The first and foremost problem is to identify the people in the photos.  For that, we need reference photos of those five people.  Here is a single image, which shows the faces of all the five guys, along with their names.
 
 ![](/images/character_names.png)
@@ -78,19 +79,19 @@ Split your team into two sub-teams.  Give 8 photos to one sub-team and the remai
 
 STOP HERE! There is a rule which I forgot to tell you.  The sub-teams have to record the identification in a particular format.  For each person they identify in each photo, an entry has to be made like this in the sheet of paper given to them.
 
-```text Contents of the sheet
+```text
 <name> - 1
 ```
 
 For example, in the first photo, if the sub-team finds Jaja and Jojo, then the sheet should contain entries as follows.
 
-```text Contents of the Sheet
+```text
 jaja - 1
 jojo - 1
 ```
 In the second photo, if Jaja is found again, a fresh entry has to be made in the sheet and the count of the already existing `jaja` should not be touched.  So, for example, if the second photo contains Jaja and Jiji, then, the sheet must look like the one below.
 
-```text Contents of the Sheet
+```text
 jaja - 1
 jojo - 1
 jaja - 1
@@ -99,7 +100,7 @@ jiji - 1
 
 Now, ask the sub-teams to do their job and once they are done with all the eight photos given to each of the sub-teams, there will be 16 lines in each sheet of paper.  This is because, each photo will certainly contain two of our guys.
 
-###Step-2: Grouping
+### Step-2: Grouping
 Now, collect the two sheets of papers with 16 lines each from the sub-teams.  Remember that your team size is 5.  Now, lets assign work to each individual and you will also do a part of the work.
 
 Take five blank sheets of paper and write each guy's name on the top of the sheet.  For example, the first sheet will have `JAJA` written on top of it, the second sheet will have `JIJI` and so on.
@@ -112,14 +113,14 @@ For example, you shout "jaja - 1", then, the guy who holds the JAJA paper would 
 
 Thus, following the above rules, the JAJA sheet could possibly look like the one below.
 
-```text JAJA
+```text 
 1
 1
 1
 1
 1
 ```
-###Step-3: Consolidating
+### Step-3: Consolidating
 The next step is the easiest one.  Now, collect the sheet of papers from your team members and distribute the same sheets but to different people.  In short, the person holding JAJA sheet in second step should not hold JAJA sheet in this step.
 
 Ask the five team members to count the number of `1`s in each sheet and write the number in BIG letters in the reverse side of the same sheet.  Also, ask them to write the guy's name in BIG letters in the reverse side of the sheet also.
@@ -135,34 +136,34 @@ Now, at the end of this step, you would know how many times each person has appe
 
 An interesting fact is that, without even knowing, you have used MapReduce manually to select the husband of the princess.
 
-##What is MapReduce?
+## What is MapReduce?
 MapReduce is a framework/philosophy/algorithm/methodology which helps us solve certain complex problems by divide-and-rule technique.  
 
 MapReduce assumes that you have more than one workers, who can do the work for you.  In our case, we had 5 workers and 1 master.  MapReduce takes the advantage of parallel processing done by many workers so that more work is done in less time.
 
 Not all jobs can be parallelly executed.  Only certain jobs can be executed parallely.  In the example above, consolidation and identification cannot be parallely executed.  It is necessary that consolidation can be done only after identification and grouping has happened.
 
-##Phases of MapReduce
+## Phases of MapReduce
 Similar to our exercise above, MapReduce has three phases.
 
-###Phase 1 - Mapping
+### Phase 1 - Mapping
 Mapping is nothing but the identification.  In our example, you mapped a number, that is, 1 to a name.  Or, you put the number 1 in the bucket named 'JAJA'.  This association or identification is called mapping.
 
 Output of mapper is always a set of key-value pairs.  Here, in our example, key is the name of the person and value is always one.
 
-###Phase 2 - Shuffle & Sort
+### Phase 2 - Shuffle & Sort
 Shuffle and sort is nothing but grouping all the mapped values according to the key.  Remember, the key in the mapper is the name of the person.  In our example, we grouped all the values, that is, the ones under the persons' names.
 
 We could also have chosen to sort the groups based on key, that is the name of the person.  That way, we would have arranged the papers in the order Jaja, Jiji, Jinjin, Jojo and Juju if we followed alphabetic sorting.
 
 The output of shuffle & sort phase is always a set of key-value pairs where each value is again a set of values.  For example, Jaja is the key and value = {1,1,1,1,1}
 
-###Phase 3 - Reducing
+### Phase 3 - Reducing
 Reducing is the job of consolidating several numbers(ones) into a single number for each group resulting from Phase 2.  This final single number for a group is the net result targeted by the problem, with which we can arrive at a final solution to the problem.
 
 For example, looking at the numbers on the reverse of the sheet, we can know who has appeared most number of times in the photos and hence, we could advise the princess about who her husband would be.
 
-###A Note on Parallel Processing
+### A Note on Parallel Processing
 Throughout our entire process, the following parallel processings took place.  
 1. Parallel processing of sub-teams (Mappers) in Phase - 1  
 2. Parallel processing of team members (Reducers) in Phase - 3
