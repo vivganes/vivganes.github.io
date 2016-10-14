@@ -10,7 +10,7 @@ published: true
 ---
 In the last blog post "[What is MapReduce? - An Exercise using Activity Based Learning](http://vivekganesan.com/what-is-mapreduce-an-exercise-using-activity-based-learning//)", the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem "Choosing the Husband" explained in the previous blog post.
 
-###Recap 
+### Recap 
 Remember that there are three phases in the MapReduce methodology.  
 1. Map  
 2. Shuffle & Sort (Which I simply call as 'Grouping')  
@@ -28,7 +28,7 @@ Before getting on to explain the technical design of the solution, let me highli
 4. The Shuffle & Sort phase has input format of key,value and output format of key,{list of values}  
 5. The Reduce phase has input format of key,{list of values} and output format of key,value  
 
-###Assumption
+### Assumption
 "Choosing the Husband" problem explained in the previous blog post has images.  We had to identify people from images.  So, we should be writing code for image processing in this blog post, right?  No!  We are going to get rid of that image processing complexity by a convenient assumption.
 
 The assumption is this: We will have two input files, with eight lines each.  Each line would have two words.  Each of these words denote the name of the person identified in the image.
@@ -40,7 +40,7 @@ jaja jojo
 ```
 Second line denotes the people present in second photo and so on upto the first eight photos.  Thereafter, entries go into the second input file.  Thus, we would end up with two files with eight lines each, each line having exactly two words.
 
-###Key-Value Input?? How?
+### Key-Value Input?? How?
 If you have not noticed, see that I have mentioned in the "Recap" section that Map phase has input format of key,value.
 
 Map is the first phase of the MapReduce process.  So, these two files, which we have, with two words in each line, should be the input to the Map phase.  Is this a key,value pair?  Not at all!  
@@ -59,7 +59,7 @@ If the second line contained `jiji jojo`, then, for that line(or split),
 
 The key is nothing but the position of the line's first character in the file, starting from zero.  This key is not at all relevant as far as this "Finding the Husband" problem is concerned.
 
-###Mapper - Sample I/O
+### Mapper - Sample I/O
 Hadoop's MapReduce framework, by default, passes one split each to a mapper process.  By default, one split is equal to one line.
 
 Thus, sample input of Mapper is   
@@ -88,7 +88,7 @@ jojo - 1
 ```
 
 
-###Shuffle and Sort - Sample I/O
+### Shuffle and Sort - Sample I/O
 If both the above mappers' outputs are piped to the input of the next phase, that is, Shuffle and Sort, the output of Shuffle and Sort phase would be  
 
 ```text
@@ -97,7 +97,7 @@ jojo - {1,1}
 jiji - {1}
 ```
 
-###Reducer - Sample I/O
+### Reducer - Sample I/O
 Reducer just adds the number of ones and consolidates the result as a single number.  So, if the above Shuffle and Sort output is piped to reducers, the output of first reducer would be
 
 ```text
@@ -120,10 +120,10 @@ Remember, the above sample values were only "samples", chained all the way throu
 
 Hoping that you follow what I have told until now, I am proceeding to the dare-devilry of writing the code.
 
-###A Good News
+### A Good News
 There is a good news.  Shuffle and Sort phase is already coded in the Hadoop MapReduce framework.  You have to code for Map and Reduce phases only.  Depending on the lines of code you write in Map and Reduce phases, your MapReduce code could do anything from a simple Word count to some complex Sentimental Analysis.
 
-###Coding the Mapper
+### Coding the Mapper
 We will be using the language Java to code our program.  Refer to the sample I/O section of the mapper above.  Remember that one line is called one split.  Also, a mapper does processing on a split at a time.  
 
 We will be writing a Java class to do the mapping functionality.  This class will be called `MatchMakerMapper`.  At this juncture, I must tell you that all classes doing the mapping functionality must extend another class called `Mapper` and must define a method called `map()`.
@@ -232,7 +232,7 @@ public class MatchMakerMapper extends Mapper&lt;LongWritable, Text, Text, LongWr
 }
 </code></pre>
 
-###Coding the Reducer
+### Coding the Reducer
 Remember that the reducer's work starts only after "Shuffle & Sort" has done its work.  That way, each reducer will be called with one group (key,{set of values}) as input at a time.
 
 Similar to the case of Mapper, the Reducer also will have its own input and output data types.
@@ -313,7 +313,7 @@ public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, Long
 }
 </code></pre>
 
-###Coding the Driver
+### Coding the Driver
 The work does not stop here.  We need to code a common templatized driver class to invoke the Mapper and Reducer.  Here is the templatized driver class called  `MatchMakerDriver`.
 
 <pre><code data-trim class="java">
@@ -370,7 +370,7 @@ public class MatchMakerDriver extends Configured implements Tool{
 
 Here ends our coding effort.
 
-###Packaging the Code
+### Packaging the Code
 In order to run in Hadoop environment, the code has to be packaged in the form of a Java Archive (JAR) file.  If you would like to run your code in [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/) VM, make sure you compile your code using Java 6.
 
 ###Running - Finding the Husband
