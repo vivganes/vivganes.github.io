@@ -50,11 +50,11 @@ MapReduce framework of Hadoop does this for you by doing the following default a
 **Value** - The actual content of the line
 
 For example, if the first line of the first file contains `jaja jojo`, then, for the first line (or split),  
-**Key** - 0  
+**Key** - `0`  
 **Value** - `jaja jojo`  
 
 If the second line contained `jiji jojo`, then, for that line(or split),   
-**Key** - 9  
+**Key** - `9`  
 **Value** - `jiji jojo`
 
 The key is nothing but the position of the line's first character in the file, starting from zero.  This key is not at all relevant as far as this "Finding the Husband" problem is concerned.
@@ -164,7 +164,7 @@ Ask yourself! Are these data types correct for Mapper?  If so, why?
 We are going to communicate these data types to our Java program in the following way.
 
 {% highlight java %}
-public class MatchMakerMapper extends Mapper&lt;LongWritable, Text, Text, LongWritable&gt;{
+public class MatchMakerMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
 
   @Override
 	public void map(LongWritable key, Text value, Context output){
@@ -217,7 +217,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class MatchMakerMapper extends Mapper&lt;LongWritable, Text, Text, LongWritable&gt; {
+public class MatchMakerMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
 	
 	
 	@Override
@@ -262,9 +262,9 @@ public class MatchMakerReducer extends Reducer {
 Similar to the case of Mapper, same conventions apply here as to which data types go where.  Thus, we end up having the following code in Reducer.
 
 {% highlight java %}
-public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, LongWritable&gt; {	
+public class MatchMakerReducer extends Reducer<Text, LongWritable, Text, LongWritable> {	
 	@Override
-	public void reduce(Text key, Iterable&lt;LongWritable&gt; values, Context output) {
+	public void reduce(Text key, Iterable<LongWritable> values, Context output) {
 		
 	}
 }
@@ -299,10 +299,10 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class MatchMakerReducer extends Reducer&lt;Text, LongWritable, Text, LongWritable&gt; {
+public class MatchMakerReducer extends Reducer<Text, LongWritable, Text, LongWritable> {
 	
 	@Override
-	public void reduce(Text key, Iterable&lt;LongWritable&gt; values, Context output)
+	public void reduce(Text key, Iterable<LongWritable> values, Context output)
 			throws IOException, InterruptedException {
 		int count = 0;
 		for(LongWritable value: values){
