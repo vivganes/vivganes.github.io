@@ -1,12 +1,14 @@
 ---
 layout: post
 section-type: post
-title: "Design and Code to Choose the Husband Using MapReduce"
-date: 2014-03-24 10:37:57 +0530
+title: Design and Code to Choose the Husband Using MapReduce
+date: '2014-03-24 10:37:57 +0530'
 comments: true
-tags: [hadoop mapreduce java]
+tags:
+  - hadoop mapreduce java
+published: true
 ---
-In the last blog post "[What is MapReduce? - An Exercise using Activity Based Learning](http://vivekganesan.com/blog/2014/03/22/what-is-mapreduce-an-exercise-using-activity-based-learning/)", the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem "Choosing the Husband" explained in the previous blog post.
+In the last blog post "[What is MapReduce? - An Exercise using Activity Based Learning](http://vivekganesan.com/what-is-mapreduce-an-exercise-using-activity-based-learning//)", the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem "Choosing the Husband" explained in the previous blog post.
 
 ###Recap 
 Remember that there are three phases in the MapReduce methodology.  
