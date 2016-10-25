@@ -20,9 +20,9 @@ Vivek Ganesan is a secret 'super hero' who holds a full time job as a Servant Le
 
 ![](/images/super_hero.png)
 
-Vivek is an admirer of Agile philosophy.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner, an aspiring Agile Coach and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conference @ Delhi](http://delhi2015.discussagile.com/), [XP Conference](http://www.2015.xpconference.in/), etc.
+Vivek is an admirer of Agile philosophy.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner, an aspiring Agile Coach and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), etc.
 
-Vivek is a open-source enthusiast and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][].  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
+Vivek is an [open-source enthusiast](https://github.com/vivganes/) and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][].  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
 
 Vivek has spoken at various tech conferences including [Dreamforce 2014][], [Dreamforce 2015][], [JavaOne][] India 2013, Powe’R’ ahead with Data Science, etc. He is a [Data Science][] enthusiast.
 
