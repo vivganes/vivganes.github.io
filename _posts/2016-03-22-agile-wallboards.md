@@ -61,6 +61,7 @@ Cost Analysis of this setup is as follows
 1. LCD Monitor - 5000 INR approx.
 2. Laptop - 60,000 INR (or Macbook - 1,00,000 INR) approx.
 3. Display Accessories (HDMI/Adapter) - 1500 INR approx.
+
 TOTAL - 66,500 INR approx in case of laptop and 1,06,500 INR approx in case of Macbook
 
 ### Variable Costs
@@ -84,6 +85,7 @@ Let's do the cost analysis of this setup
 ### Fixed Costs
 1. LCD Monitor -  5000 INR approx
 2. Apple TV - 13,000 INR approx
+
 Total - 18,000 INR approx
 
 ### Variable Costs
@@ -111,6 +113,7 @@ Instead of hard disk, a SD Card serves as a primary memory.  The OS is light-wei
 ### Fixed Costs
 1. LCD Monitor -  5000 INR approx
 2. Raspberry Pi Kit - 4,000 INR approx
+
 Total - 9,000 INR approx
 
 ### Variable Costs
