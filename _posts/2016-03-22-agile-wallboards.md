@@ -1,6 +1,6 @@
 ---
 published: true
-title: 'Agile Wallboards - What, Why and How?'
+title: Electronic Agile Wallboards for Distributed Teams
 layout: post
 section-type: post
 comments: true
@@ -8,25 +8,25 @@ date: '2016-01-22 05:47:23 +0530'
 ---
 
 
-Agile Team Wallboards make an agile team's workspace meaningful.  Wallboard is an information radiator mounted on wall (pretty self-explanatory, huh!).  Wallboard displays relevant information, aggregated from multiple sources, to help in making decisions regarding daily work.
+Agile Team Wallboards make an agile team's workspace meaningful.  Electronic Wallboard is an information radiator mounted on wall (pretty self-explanatory, huh!).  Wallboard displays relevant information, aggregated from multiple sources, to help in making decisions regarding daily work.
 
-Team Wallboard is typically electronic, powered by widgets and dashboards available in popular Agile tools like JIRA, Rally, etc. There are some (lucky) teams which have a manually maintained wallboard as well.
+A Distributed team's Wallboard is typically electronic, powered by widgets and dashboards available in popular Agile tools like JIRA, Rally, etc. There are some (lucky) teams which have a manually maintained wallboard as well.
 
 This post talks more about electronic form of the Wallboard.
 
-## Why is a Wallboard needed?
+## Why is an Electronic Wallboard needed?
 Wallboard serves two sets of people in the organization:
 
 1. **The team** - The team uses real data to make daily decisions to reach their iteration goal.
 
 2. **Everyone else**- No one needs to go and ask about iteration's health from team members or scrum master.  They can just spend some minutes looking at the wallboard and they have the metrics.
 
-##What information can be included in Team Wallboard?
+## What information can be included in Electronic Wallboard?
 Anything that helps!  You can include burn down charts, bug counts, days-until-iteration-end counters, etc.  
 
 The idea is to evolve the design of wallboard's information over time. You need to discuss the design improvements in wallboard during retrospectives.
 
-# How to setup a Team Wallboard?
+# How to setup an Electronic Wallboard?
 
 ## Option 1 : Wallboard using an Always-on Whining Machine
 
