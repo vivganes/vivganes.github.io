@@ -15,7 +15,7 @@ A Distributed team's Wallboard is typically electronic, powered by widgets and d
 This post talks more about electronic form of the Wallboard.
 
 ## Why is an Electronic Wallboard needed?
-Wallboard serves two sets of people in the organization:
+Electronic Wallboard serves two sets of people in the organization:
 
 1. **The team** - The team uses real data to make daily decisions to reach their iteration goal.
 
