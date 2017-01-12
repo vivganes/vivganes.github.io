@@ -1,10 +1,10 @@
 ---
 published: true
-title: "Agile Wallboards - What, Why and How?"
+title: 'Agile Wallboards - What, Why and How?'
 layout: post
-"section-type": post
+section-type: post
 comments: true
-date: "2016-01-22 05:47:23 +0530"
+date: '2016-01-22 05:47:23 +0530'
 ---
 
 
@@ -14,7 +14,7 @@ Team Wallboard is typically electronic, powered by widgets and dashboards availa
 
 This post talks more about electronic form of the Wallboard.
 
-##Why is a Wallboard needed?
+## Why is a Wallboard needed?
 Wallboard serves two sets of people in the organization:
 
 1. **The team** - The team uses real data to make daily decisions to reach their iteration goal.
@@ -26,7 +26,7 @@ Anything that helps!  You can include burn down charts, bug counts, days-until-i
 
 The idea is to evolve the design of wallboard's information over time. You need to discuss the design improvements in wallboard during retrospectives.
 
-#How to setup a Team Wallboard?
+# How to setup a Team Wallboard?
 
 ## Option 1 : Wallboard using an Always-on Whining Machine
 
