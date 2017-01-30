@@ -20,7 +20,7 @@ Vivek Ganesan, the [Time Person of the Year - 2006](https://en.wikipedia.org/wik
 
 ![](/images/super_hero.png)
 
-Vivek is an admirer of Agile philosophy.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner, an aspiring Agile Coach and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), etc.
+Vivek is an admirer of Agile philosophy.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), etc.
 
 Vivek is an [open-source enthusiast](https://github.com/vivganes/) and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][].  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
 
