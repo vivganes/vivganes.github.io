@@ -16,7 +16,7 @@ title: Who is Vivek?
 
 
 
-Vivek Ganesan, the [Time Person of the Year - 2006](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)), is a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and writing about technology and agile software development, writing [blogs advocating men's rights](http://in.avoiceformen.com/author/vivek/) and sometimes, singing in his bathroom.
+Vivek Ganesan, the [Time Person of the Year - 2006](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)), is a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and [writing](http://vivekganesan.com/posts/) about technology and agile software development, writing [blogs advocating men's rights](http://in.avoiceformen.com/author/vivek/) and sometimes, singing in his bathroom.
 
 ![](/images/super_hero.png)
 
