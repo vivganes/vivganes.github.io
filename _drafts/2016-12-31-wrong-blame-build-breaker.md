@@ -7,51 +7,86 @@ date: '2016-12-31 16:30:23 +0530'
 title: 21 Instances Where the Wrong Person Gets Blamed for a Build Failure
 ---
 
+This is a continuation to my earlier post “[Is Chastising Build Breakers Correct?](http://vivekganesan.com/is-chastising-build-breakers-correct/)” in the spirit of practising Blameless CI.
 
-## Do You Chastise Build Breakers?
+In most of the teams that I have worked with, the build breaker is frowned upon, sometimes treated like a criminal. Until recently, even the Jenkins build monitor called the person who committed just before a failing build as a ‘culprit’.
 
-Continuous Integration is a powerful way to identify and eliminate certain risks, particularly when multiple teams are rallying towards a planned release.  Even if you are not working on a planned release, Continuous Integration will help you to cut-out a release sooner than you would if you did not have CI.
+Though there is no denying that developer’s inattention to detail causes some build failures but developer’s negligence is not the only cause of a build failure.
 
-When organizations or teams start adopting Continuous Integration for the first time, they develop an untold habit to chastise the _build breaker_, whenever a build breaks. Most of the time, the reprimanded _build breaker_ is a person and not a thing, a machine or a process :)
+This drove me into writing a non-exhaustive list of ways, based on my experience, in which the wrong person gets blamed for a build failure just because he/she happened to be the last one to push a code change.
 
-Even at organizations which gamify the work environment, a red-card, negative points or bad-karma is added to the person’s score board when he or she breaks builds.  Some organizations take it to the extreme by making the number of build failures to affect the appraisal of a developer.
+## Assumptions
 
-This blog post is dedicated to convincing you that this is not the right way to do Continuous Integration, just in case you were wondering where this is leading.
+### a. People Involved
 
-## Can a developer prevent broken builds?
+Here are the names that I would like to give to the people involved in illustrations.
 
-Let us start by questioning ourselves how much control does a developer have on whether his commit would break the build or not. 
+I - Myself, the sorry soul who gets blamed for the build failure
+X - Previous Committer, who pushed a commit after my checkout
 
-I prefer to visualize the code branches as roads in a city.  Any developer who is working towards a commit is like a driver driving his car in the direction of a road merge - a point where his road merges with another bigger road.  
+### b. Steps followed by developer to push new changes (assuming git)
 
-Unlike real world, the driver cannot signal to potential vehicles on the other road using lights, sound or anything.  He has no other option than to directly drive into the road-merge just hoping that he will not get hit by another vehicle on the other road.  See? The developer has very little control on whether the build will break in the CI system or not. 
+1. I checkout the code
+1. I make changes
+1. I run tests
+1. I commit
+1. I push my commit to upstream (Rely on IntelliJ or IDE to rebase my commit on top of any commit that came in after my checkout - Essentially do a git pull and then a git push)
 
-However, in the code universe, the driver does not die or get injured when another vehicle crashes into his.  He can just repair his car and proceed ahead fully alive and able!
+REMEMBER! It is very important and urgent for me to push as soon as the rebase happens or else someone will commit in the meantime and I have to rebase again. If you understand this fact clearly, there is no need to struggle to understand any items in the following list. 
 
-## What if build breakage hurts the developer?
+The situation gets even more complicated if I have a pre-commit code review system like Gerrit, where I do not have control on how long it takes for a reviewer to give an approval.
 
-If the build breakage cannot be tolerated, then the driver could stop the car before the merge, get down, look for oncoming vehicles and then drive to the merge if none found.  Hey, but what if a lightning-speed Ferrari comes on the road just at the moment when the driver went back to car after reassuring himself that there were no vehicles approaching from the other road?  In the world of shared codebase, particularly in enterprises, such lightning-speed Ferraris are more common.  So, if build breakage is frowned upon, the developer slows down and even after that he cannot be sure not to break the build - blame the Ferraris!  Imagine what could happen to the motivation levels of that developer if the trend continues!
+Now that you know what the context is, here are the 21 instances. Oh wait! Remember! This is not an exhaustive list.
 
-## Hey, What if the car could not run properly even before merge?
+## 21 Instances Where ...
 
-I made a convenient assumption that the car is in a runnable state before the road merges!  This assumption might turn out to be wrong sometimes or even many-a-times.  The car(code) might not be in a runnable state or have some defects (Gas out! Brakes are God’s will! Can run only at the speed of a Tonga!) before road merges. Hence, the car stops the moment it is put into the merged road, which has harsher conditions.  This would block the other vehicles coming into the merged road, causing ruckus!  
+### Compilation Errors
 
-In this case, it may be argued that it is the wrong judgment of the developer which caused the ruckus here.  However, if the system or process does not enforce a pre-commit verification of P0 failures, the developer cannot be blamed.  After all, the whole idea of CI is to make sure that the mistakes of an individual developer should not turn out to be costly to the organization.  
+1. I add a variable ‘myVar’ for some purpose. X also added a variable ‘myVar’ for a different purpose. This applies to names of class, method or any other identifier.
+1. X deleted property/method of a class that my code uses.
+1. X added an additional parameter to a method that my new code calls. This applies to removing/reshuffling parameters too.
+1. X upgraded a library that the code is dependent on. My code calls a method that is unsupported in new version but supported in old version. This applies to downgrading versions too.
 
-Many a times, it turns out to be that the developer’s road does not have the same conditions (read as infrastructure) as the broader merged road and hence, a developer could never be sure if his car would run in merged road.
+### Test Failures
 
-## Types of CI Failures
+1. I added a new test. X pushed code that does not pass my new test’s expectations
+1. I write a test, taking some pre-conditions for granted, because that is always the case so far. X pushed a test, which while running, will mess with the expected pre-conditions of my new test. For example, test written by X might change a global variable to a value that will cause my new test to fail. This is not an issue in case of tech stacks which provide clean slate for each test.
+1. I write a UI test that opens a dialog and checks its contents. X pushed a test that opens a modal dialog but forgot to close the modal dialog at the end of the test. This would prevent my test from even opening up my expected dialog.
+1. I wrote an integration test that traverses the following classes : A-> B-> C. I wrote mocks for C. Meanwhile, X committed a test that mocks class B and let his test share my test’s environment. This is not an issue in case of tech stacks which provide clean slate for each test.
 
-Shortly put, CI failures can be of two categories:
-1. Unavoidable
-2. Avoidable
+### Incorrect CI Configuration
 
-In case of unavoidable failures, don’t blame the developer.  After all the very advantage of CI in your organization just demonstrated itself by this build failure.
+1. Recent breaking change in CI Job configuration.
+1. CI job generates an artifact/file based on the source files that I have in repository. I deleted a source file in the last commit. Expectation is that the generated file is also not present during building. But, CI job’s workspace still contains the last generated copy of the artifact, even if the source file is deleted from the repository. For example, I delete a class but my CI job has the .class file that was generated from the earlier build. Same is the case with typescript compilation from .ts files to .js files. This is usually a case where ‘not clean’ or incremental builds are performed (which is actually a good thing in some cases).
+1. Till date, CI has been showing ‘green’ all time because of misconfiguration. Just before I pushed my commit, the CI job was corrected to show the actual results.
+1. Another job is configured to use/modify the directory that my job also uses. Namespacing/isolation issues.
 
-In case of avoidable failures too, don’t blame the developer. Avoid the failures using technology or process and more importantly allow this avoidance-methodology to evolve over time.  
+### Build Environment Issues
 
-## How do I motivate collective code ownership then?
+1. The test database ran out of space just before my commit. This does not apply to cases where a database is created fresh with every build.
+1. The CI server ran out of disk space just before my commit.
+1. The database/external service used by the CI job to run the build/tests was upgraded just before my commit.
+1. Changes were being done on Access Control Lists of environments during the time my commit was being validated.
+1. AWS has forcefully terminated the EC2 instances used by CI job for some reason just when my commit was being validated. (For example, doubtful malicious activity, overdues, etc)
 
-If you want to motivate your developers to collectively own the code, instead reward the developers who ‘fix’ a broken build, particularly when they fix it without adding tech-debt.  This subtle change from ‘_punish the breaker_’ to ‘_reward the fixer_’ will make sure that your CI pipeline is almost 'always up' and churning out quality software.
+### Just Setting up - Starting Troubles
 
-This shift will not only add to your employee satisfaction but also make you help kick-ass software in short time, without wasting time on discussions about “Whose fault is it?”.  In short, this will give your teams a slight shift in orientation away from “blame game” culture towards “ownership” culture.  What do you think about this? Let me know! I am all ears (and eyes too)!
+1. The step to run tests in CI job was enabled just before my commit
+1. X committed a test configuration file (especially something like karma.conf.js file) that would include my new files and fail when my new files are run inside tests.
+1. CI job was using a trial version of a software involved in the build process till date. Now upgraded to paid version which enforces more stringent standards.
+1. New rule added to SONAR (or any static code check) just before my commit.
+1. There are ways to avoid a lot of the above wrong failures. But, rarely, many of them fall under the control of an individual developer. These preventive measures either end up with architects or the maintainers of CI environments, who, in fortunate cases, are part of development teams (Devops anyone??) and in most cases not.
+
+Moreover, this list is not even exhaustive. I wrote this list from my context of work. I am sure the readers will come up with scenarios that fit their individual contexts.
+
+## What do we learn from this?
+
+Single piece of learning that I would take away from this list is this:
+
+> Blaming the last committer for a build failure, without looking into the details, is just plainly gross and offensive! 
+
+It is more efficient and cheaper to concentrate on ‘fixing’ builds rather than concentrating on ostracizing the build breaker.
+
+What are your thoughts on this? I would love to know your view-points, particularly if I am fortunate to be corrected by yours.
+
+
