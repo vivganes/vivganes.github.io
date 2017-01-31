@@ -3,7 +3,7 @@ published: false
 layout: post
 section-type: post
 comments: true
-date: '2016-03-10 06:30:23 +0530'
+date: '2016-12-31 16:30:23 +0530'
 title: 21 Instances Where the Wrong Person Gets Blamed for a Build Failure
 ---
 
