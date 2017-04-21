@@ -65,6 +65,22 @@ But, isn’t this similar to the Merit Money system of Jurgen? Yes but this syst
 
 If I try to evaluate this Open Coin Bank initiative against Jurgen’s checklist for rewards, the deficiencies in this otherwise good looking system become easily visible.
 
+<style>
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:2px solid #ff0000;
+}
+
+th{
+    border:2px solid #000000;
+}
+
+td{
+    border:1px solid #000000;
+}
+</style>
+
 | Rule                              | Did 'Open Coin Bank' follow this rule?  |
 |-----------------------------------|--------------------|
 | Don’t promise rewards in advance  | No.,The system was an open promise for a reward for anyone who got 2500 coins and none for others.,Moreover, there was no ‘chance’ element for the reward.,In short, the rewards were not dependent on the environment.,There was no ‘roll of dice’ that could decide one’s encashment without affecting the accruals.                    |
