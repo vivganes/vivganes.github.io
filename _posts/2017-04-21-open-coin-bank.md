@@ -73,7 +73,6 @@ If I try to evaluate this Open Coin Bank initiative against Jurgen’s checklist
 | Reward continuously not once      | Theoretically yes. Practically no. Since the initial goal was too high (2500 coins), it was difficult to envisage the second instance of encashing the reward, leave alone the first instance.|
 | Reward publicly not privately | Yes.,However, we could have made this rewards more public by encouraging physical ways of giving the currency rather than quietly entering in an excel sheet. |
 | Reward behaviors and not outcomes | Partly Yes. There was a clause of ‘bonus deliverables’ for which PO/Architect/manager can recommend coins.   |
-| Reward peers, not subordinates    | Partly Yes. There was a way in which one can earn coins from their managers too.,One big loophole was that there was no ‘upper limit’ on how many coins the higher-ups can give from the Eye of God to anyone.,This promotes people trying to please managers as it helps their performance appraisal in addition to the coin encashment. |
-{:.mbtablestyle}
+| Reward peers, not subordinates    | Partly Yes. There was a way in which one can earn coins from their managers too.,One big loophole was that there was no ‘upper limit’ on how many coins the higher-ups can give from the Eye of God to anyone.,This promotes people trying to please managers as it helps their performance appraisal in addition to the coin encashment. |{:.mbtablestyle}
 
 Were these differences the ones that contributed to the death of Open coin bank?  I do not know for sure.  But, I now have some good improvements to the system that can be tried for the next cycle.  Thanks to Jurgen for the pointers and to my team which helped my thought process by trying this experiment!
