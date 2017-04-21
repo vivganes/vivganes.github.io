@@ -37,17 +37,17 @@ This section introduced the idea to anyone new and set some rules for the bank. 
 - Each release cannot have more than 4 bonus deliverables
 
 **Penalties**
-- Anyone who is caught doing malpractice have to pay 1000 coins as fine to The Eye of God apart from giving 1000 coins to the person who caught the malpractice
+- Anyone who is caught doing malpractice have to pay 1000 coins as fine to The Eye of God apart from giving 1000 coins to the person who caught the malpractice.
 
+![Screen Shot 2017-04-19 at 3.55.32 PM.png]({{site.baseurl}}/images/Screen Shot 2017-04-19 at 3.55.32 PM.png)
 
 ### Tab 2 - Summary of each participant's current balance
 
-
+![Screen Shot 2017-04-19 at 3.45.34 PM.png]({{site.baseurl}}/images/Screen Shot 2017-04-19 at 3.45.34 PM.png)
 
 ### Tab 3 - Transactions
 
-
-
+![Screen Shot 2017-04-19 at 3.50.10 PM.png]({{site.baseurl}}/images/Screen Shot 2017-04-19 at 3.50.10 PM.png)
 
 ## Positive Outcomes
 1. People started giving coins to other teams’ members (who were not in the program initially) -- Developers gave coins to support team members and some support team members gave their earned coins back to developers who helped them sometime.
@@ -73,6 +73,4 @@ If I try to evaluate this Open Coin Bank initiative against Jurgen’s checklist
 |Reward behaviors and not outcomes|Partly Yes. There was a clause of ‘bonus deliverables’ for which PO/Architect/manager can recommend coins.|
 |Reward peers, not subordinates.|Partly Yes. There was a way in which one can earn coins from their managers too.  One big loophole was that there was no ‘upper limit’ on how many coins the higher-ups can give from the Eye of God to anyone.  This promotes people trying to please managers as it helps their performance appraisal in addition to the coin encashment.|
 
-Were these differences the ones that contributed to the death of Open coin bank?  I do not know for sure.  But, I now have some good improvements to the system that can be tried for the next cycle.  Thanks, Jurgen for the pointers!
-
-
+Were these differences the ones that contributed to the death of Open coin bank?  I do not know for sure.  But, I now have some good improvements to the system that can be tried for the next cycle.  Thanks to Jurgen for the pointers and to my team which helped my thought process by trying this experiment!
