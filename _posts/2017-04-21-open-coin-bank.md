@@ -6,7 +6,7 @@ comments: true
 date: '2017-04-21 16:30:23 +0530'
 title: Merit Money - Implementation and Learnings
 ---
-While I was reading the book [Managing for Happiness](https://management30.com/product/managing-for-happiness/) written by Jurgen Appelo, I came across a concept called Merit Money.  Jurgen Appelo says that we can improve ‘good’ behaviors and collaboration among people in an organization by introducing a Merit Money system where anyone in the organization can award virtual currencies, whose value fluctuate over time, to anyone else who exhibited a good behavior.  Everyone will be allotted an initial seed amount of some virtual currencies to start with and each quarter or year, they can be redeemed for a physical reward or money.
+While I was reading the book [Managing for Happiness](https://management30.com/product/managing-for-happiness/) written by Jurgen Appelo, I came across a concept called [Merit Money](https://management30.com/practice/merit-money/).  Jurgen Appelo says that we can improve ‘good’ behaviors and collaboration among people in an organization by introducing a Merit Money system where anyone in the organization can award virtual currencies, whose value fluctuate over time, to anyone else who exhibited a good behavior.  Everyone will be allotted an initial seed amount of some virtual currencies to start with and each quarter or year, they can be redeemed for a physical reward or money.
 
 The ‘Merit Money’ concept shows striking similarities to the ‘Open Coin Bank’ initiative that my team tried two years ago, while I was serving as a Scrum Master for a team of 9 people.  This initiative was to reward the ‘collaboration’ among team members and not the competition.  We tried it at ‘team level’ and not at organization level.
 
