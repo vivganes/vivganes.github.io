@@ -4,7 +4,7 @@ layout: post
 section-type: post
 comments: true
 date: '2017-04-21 16:30:23 +0530'
-title: Open Coin Bank
+title: Merit Money - Implementation and Learnings
 ---
 While I was reading the book [Managing for Happiness](https://management30.com/product/managing-for-happiness/) written by Jurgen Appelo, I came across a concept called Merit Money.  Jurgen Appelo says that we can improve ‘good’ behaviors and collaboration among people in an organization by introducing a Merit Money system where anyone in the organization can award virtual currencies, whose value fluctuate over time, to anyone else who exhibited a good behavior.  Everyone will be allotted an initial seed amount of some virtual currencies to start with and each quarter or year, they can be redeemed for a physical reward or money.
 
@@ -16,7 +16,9 @@ I do not remember where my team got that inspiration from.  We created a excel w
 
 ### Tab 1 - Rules of Open Coin Bank
 
-This section introduced the idea to anyone new and set some rules for the bank.  Here are the rules.
+![Screen Shot 2017-04-19 at 3.55.32 PM.png]({{site.baseurl}}/images/Screen Shot 2017-04-19 at 3.55.32 PM.png)
+
+This tab introduced the idea to anyone new and set some rules for the bank.  Here are the rules.
 
 - This open coin bank is 'open'.
 - All members will have unlimited access to edit it.
@@ -38,8 +40,6 @@ This section introduced the idea to anyone new and set some rules for the bank. 
 
 **Penalties**
 - Anyone who is caught doing malpractice have to pay 1000 coins as fine to The Eye of God apart from giving 1000 coins to the person who caught the malpractice.
-
-![Screen Shot 2017-04-19 at 3.55.32 PM.png]({{site.baseurl}}/images/Screen Shot 2017-04-19 at 3.55.32 PM.png)
 
 ### Tab 2 - Summary of each participant's current balance
 
@@ -68,11 +68,11 @@ If I try to evaluate this Open Coin Bank initiative against Jurgen’s checklist
 
 | Rule                              | Did 'Open Coin Bank' follow this rule?  |
 |-----------------------------------|--------------------|
-| Don’t promise rewards in advance  | No.,The system was an open promise for a reward for anyone who got 2500 coins and none for others.,Moreover, there was no ‘chance’ element for the reward.,In short, the rewards were not dependent on the environment.,There was no ‘roll of dice’ that could decide one’s encashment without affecting the accruals.                    |
-| Keep anticipated rewards small    | Can’t say.,Since there was no guidelines for what 2500 coins were worth, we cannot say whether people had ‘big’ rewards in their anticipations or not.,But, one thing is for sure -- the motivation for using this open coin bank did not stay for long.  |
+| Don’t promise rewards in advance  | No. The system was an open promise for a reward for anyone who got 2500 coins and none for others. Moreover, there was no ‘chance’ element for the reward.,In short, the rewards were not dependent on the environment.There was no ‘roll of dice’ that could decide one’s encashment without affecting the accruals.                    |
+| Keep anticipated rewards small    | Can’t say. Since there was no guidelines for what 2500 coins were worth, we cannot say whether people had ‘big’ rewards in their anticipations or not. But, one thing is for sure -- the motivation for using this open coin bank did not stay for long.  |
 | Reward continuously not once      | Theoretically yes. Practically no. Since the initial goal was too high (2500 coins), it was difficult to envisage the second instance of encashing the reward, leave alone the first instance.|
-| Reward publicly not privately | Yes.,However, we could have made this rewards more public by encouraging physical ways of giving the currency rather than quietly entering in an excel sheet. |
+| Reward publicly not privately | Yes. However, we could have made this rewards more public by encouraging physical ways of giving the currency rather than quietly entering in an excel sheet. |
 | Reward behaviors and not outcomes | Partly Yes. There was a clause of ‘bonus deliverables’ for which PO/Architect/manager can recommend coins.   |
-| Reward peers, not subordinates    | Partly Yes. There was a way in which one can earn coins from their managers too.,One big loophole was that there was no ‘upper limit’ on how many coins the higher-ups can give from the Eye of God to anyone.,This promotes people trying to please managers as it helps their performance appraisal in addition to the coin encashment. |{:.mbtablestyle}
+| Reward peers, not subordinates    | Partly Yes. There was a way in which one can earn coins from their managers too.,One big loophole was that there was no ‘upper limit’ on how many coins the higher-ups can give from the Eye of God to anyone. This promotes people trying to please managers as it helps their performance appraisal in addition to the coin encashment. |
 
 Were these differences the ones that contributed to the death of Open coin bank?  I do not know for sure.  But, I now have some good improvements to the system that can be tried for the next cycle.  Thanks to Jurgen for the pointers and to my team which helped my thought process by trying this experiment!
