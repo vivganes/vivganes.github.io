@@ -7,19 +7,17 @@ footer: true
 published: true
 ---
 
-Vivek Ganesan, the [Times Person of the Year (2006)](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)) and a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and writing about technology and agile software development, writing [blogs advocating men's rights](http://in.avoiceformen.com/author/vivek/) and sometimes, singing in his bathroom.
+Vivek Ganesan, the [Times Person of the Year (2006)](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)) and a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and writing about technology and agile software development and sometimes, singing in his bathroom.
 
 ![](/images/super_hero.png)
 
-Vivek is an admirer of Agile philosophy.  He is a [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner, an aspiring Agile Coach and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conference @ Delhi](http://delhi2015.discussagile.com/), [XP Conference](http://www.2015.xpconference.in/), etc.
+Vivek is an admirer of Agile philosophy.  He is a [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner, an aspiring Agile Coach and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conference @ Delhi](http://delhi2015.discussagile.com/), [XP Conference](http://www.2015.xpconference.in/), [Business Agility Roadshow 2017](http://baroadshow.agilecoffeetalk.com/), [BizDevOps Master Webinar Series](https://www.youtube.com/watch?v=i4CpS14E7Eo&list=PLaM7bIEFx40uTfQFcSWA_wKd9uXvkFLDx&index=2), etc.
 
 Vivek is a open-source enthusiast and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][].  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
 
 Vivek has spoken at various tech conferences including [Dreamforce 2014][], [Dreamforce 2015][], [JavaOne][] India 2013, Powe’R’ ahead with Data Science, etc. He is a [Data Science][] enthusiast.
 
 You can follow Vivek on [Twitter][], if you would like to catch up with his thoughts.
-
-P.S: Don't tell anyone that he is the Chief Admin & Editor of [A Voice for Men (India)](http://in.avoiceformen.com/)
 
   [Gainsight]: http://www.gainsight.com
   [JavaOne]: http://www.oracle.com/javaone/index.html
