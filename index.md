@@ -16,19 +16,17 @@ title: Who is Vivek?
 
 
 
-Vivek Ganesan, the [Time Person of the Year - 2006](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)), is a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and [writing](http://vivekganesan.com/posts/) about technology and agile software development, writing [blogs advocating men's rights](http://in.avoiceformen.com/author/vivek/) and sometimes, singing in his bathroom.
+Vivek Ganesan, the [Time Person of the Year - 2006](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)), is a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and [writing](http://vivekganesan.com/posts/) about technology and agile software development and sometimes, singing in his bathroom.
 
 ![](/images/super_hero.png)
 
-Vivek is an admirer of Agile philosophy.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), etc.
+Vivek is an admirer of Agile philosophy.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), [Business Agility Roadshow 2017](http://baroadshow.agilecoffeetalk.com/), [BizDevOps Master Webinar Series](https://www.youtube.com/watch?v=i4CpS14E7Eo&list=PLaM7bIEFx40uTfQFcSWA_wKd9uXvkFLDx&index=2), etc.
 
-Vivek is an [open-source enthusiast](https://github.com/vivganes/) and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][].  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
+Vivek is an [open-source enthusiast](https://github.com/vivganes/) and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][], Karma[], etc.  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
 
 Vivek has spoken at various tech conferences including [Dreamforce 2014][], [Dreamforce 2015][], [JavaOne][] India 2013, Powe’R’ ahead with Data Science, etc. He is a [Data Science][] enthusiast.
 
 You can follow Vivek on [Twitter][], if you would like to catch up with his thoughts.
-
-P.S: Don't tell anyone that he is the Chief Admin & Editor of [A Voice for Men (India)](http://in.avoiceformen.com/)
 
   [Gainsight]: http://www.gainsight.com
   [JavaOne]: http://www.oracle.com/javaone/index.html
@@ -36,6 +34,7 @@ P.S: Don't tell anyone that he is the Chief Admin & Editor of [A Voice for Men (
   [Mozilla.org]: http://www.mozilla.org
   [Hadoop]: http://hadoop.apache.org
   [HBase]: http://hbase.apache.org
+  [Karma]: https://github.com/karma-runner/karma
   [Hortonworks Sandbox]: https://github.com/hortonworks/hadoop-tutorials/
   [Dreamforce 2014]: http://www.salesforce.com/dreamforce/DF14/
   [Dreamforce 2015]: http://www.salesforce.com/dreamforce/DF15/
