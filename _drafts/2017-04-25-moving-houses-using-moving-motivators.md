@@ -12,11 +12,11 @@ Yes, _shared_ _accommodation_! Let me make one thing clear to you -- I am _not_ 
 
 Stuck with two options, I started to think how I can evaluate the possible shift to a shared accommodation.  After a few moments, it hit me - _Moving Motivators_!  
 
-I finished reading Jurgen Appelo’s ‘Managing for Happiness’ and ‘Management 3.0’ a few weeks ago.  Jurgen explains in his book about a thinking tool called ‘Moving Motivators’ which helps one to evaluate how a change affects a person’s internal motivations.  Using this tool would mean that I could evaluate how I am likely to feel after the move to shared accommodation, even without doing the move. (Don’t get me started on how the name ‘Moving motivators’ itself motivates my move!)
+I finished reading Jurgen Appelo’s ‘[Managing for Happiness](https://management30.com/product/managing-for-happiness/)’ and ‘[Management 3.0](https://management30.com/about/)’ a few weeks ago.  Jurgen explains in his book about a thinking tool called ‘[Moving Motivators](https://management30.com/product/workouts/champfrogs-organizational-change-management/)’ which helps one to evaluate how a change affects a person’s internal motivations.  Using this tool would mean that I could evaluate how I am likely to feel after the move to shared accommodation, even without doing the move. (Don’t get me started on how the name ‘Moving motivators’ itself motivates my move!)
 
-Moving motivators is based on Jurgen’s CHAMPFROGS checklist of motivating factors.  If you do not know what they are, you can take a look at the list here.
+Moving motivators is based on Jurgen’s CHAMPFROGS checklist of motivating factors.  If you do not know what they are, you can take a look at the list [here](https://management30.com/product/workouts/champfrogs-organizational-change-management/).
 
-I printed out the 'Moving Motivators' cards on an A4 sized card, cut them into individual motivator cards and tried evaluating the move with an imaginary friend of mine as an observer.  There are two steps in this activity namely,
+I printed out the ['Moving Motivators' cards](https://1qjpt15fhlq3xjfpm2utibj1-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/Moving-Motivators-2015-self-print-A4-English.pdf) on an A4 sized card, cut them into individual motivator cards and tried evaluating the move with an imaginary friend of mine as an observer.  There are two steps in this activity namely,
 
 1. Sorting
 1. Change evaluation
@@ -31,7 +31,7 @@ Challenge: I do not know what my purpose in life is! Poor me!  I had to list dow
 ### Card - 2: Honor - I feel proud that my personal values are reflected in how I work
 Challenge: I know what I value in myself but I have never actually verbalized it.  This led me to take some time to verbalize and write down my value system.
 
-## 1.Sorting
+## Step - 1: Sorting
 
 In this step, I am supposed to horizontally place the cards in the order of importance, while speaking my thoughts aloud.  The first card to my left should be the one that matters the most to me and the last card should be the one that matters the least to me.
 
@@ -57,7 +57,7 @@ At this point, my friend blurted out, ‘You and I are too much different in our
 Now that the sorting is taken care of, I moved on to the evaluation of my move to a shared accommodation.
 
 
-## 2. Change Evaluation
+## Step - 2: Change Evaluation
 
 In the second step, I need to evaluate whether the proposed change would affect each card positively, negatively or not at all.  If an item is affected positively, I need to move that card up and if negatively, I need to move that card down.  I kept some space in the middle for cards that do not have any effect because of the proposed move.
 
