@@ -15,10 +15,11 @@ Since I was going to touch upon certain touchy topics, I decided to give the fee
 I went ahead and wrote that person a message (anonymously) like the one below, in a moment of passionate frustration.
 
 _This feedback might come across as being too open.  However, I feel the need to communicate this._
-_1. I would expect you to blah, blah and blah._
-_1. Please understand that blah, blah and blah_
-_1. Please stop blah, blah and blah._
-_1. Please do blah, blah and blah._
+
+1. _I would expect you to blah, blah and blah._
+1. _Please understand that blah, blah and blah_
+1. _Please stop blah, blah and blah._
+1. _Please do blah, blah and blah._
 
 _Thanks for reading up to this and this feedback is shared for the benefit of the teams.  Feel free to take it for what you think it is worth._
 
