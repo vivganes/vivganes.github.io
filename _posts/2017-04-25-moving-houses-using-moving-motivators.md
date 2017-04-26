@@ -4,7 +4,7 @@ layout: post
 section-type: post
 comments: true
 date: '2017-04-25 10:54:23 +0530'
-title: How Management 3.0 Helped Me in Moving Houses?
+title: How did Management 3.0 Help Me in Shifting My Home?
 ---
 I have been living alone for the past 3 years and thoroughly enjoying it.  However, I also realized that I have grown too much into my comfort zone of living alone, without any restrictions whatsoever.  One fine day, I contemplated the option of moving to a shared accommodation.  
 
@@ -65,7 +65,7 @@ After some minutes of mumble jumble, my card arrangement looked like this.
 
 ![IMG_20170425_094124.jpg]({{site.baseurl}}/images/IMG_20170425_094124.jpg)
 
-Now I knew why the idea of moving to a shared accommodation occurred to me in the first place.  Looks like the move is going to affect my motivators positively -- at least that is what my mind believes.
+Now I knew why the idea of moving to a shared accommodation occurred to me in the first place. Almost all my top motivator cards have all either moved up or stayed in the middle.  Looks like the move is going to affect my motivators positively -- at least that is what my mind believes.
 
 Thanking my friend for his time and patience, I proceeded to make the payment of advance towards the new place that I would call my home, at least for now!
 
