@@ -14,11 +14,11 @@ Since I was going to touch upon certain touchy topics, I decided to give the fee
 
 I went ahead and wrote that person a message (anonymously) like the one below, in a moment of passionate frustration.
 
-_This feedback might come across as being too open.  However, I feel the need to communicate this.
-1. I would expect you to blah, blah and blah.
-1. Please understand that blah, blah and blah
-1. Please stop blah, blah and blah.
-1. Please do blah, blah and blah._
+_This feedback might come across as being too open.  However, I feel the need to communicate this._
+_1. I would expect you to blah, blah and blah._
+_1. Please understand that blah, blah and blah_
+_1. Please stop blah, blah and blah._
+_1. Please do blah, blah and blah._
 
 _Thanks for reading up to this and this feedback is shared for the benefit of the teams.  Feel free to take it for what you think it is worth._
 
@@ -47,7 +47,7 @@ A feedback wrap contains three sections namely
 
 I described my context as follows:
 
-I am writing this after great contemplation while sipping black tea and trying to make the best use of the one-hour free slot that I have today.  Most of what I am writing is also based on what I observed/heard from interactions with multiple people in our organization, so there is always a possibility of me telling you some non-factual stuff or some perceptions.  So, take this feedback with a pinch of salt.
+_I am writing this after great contemplation while sipping black tea and trying to make the best use of the one-hour free slot that I have today.  Most of what I am writing is also based on what I observed/heard from interactions with multiple people in our organization, so there is always a possibility of me telling you some non-factual stuff or some perceptions.  So, take this feedback with a pinch of salt._
 
 ## Section - 2: Observations and related emotions sorted by value
 
