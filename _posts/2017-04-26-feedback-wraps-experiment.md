@@ -4,7 +4,7 @@ layout: post
 section-type: post
 comments: true
 date: '2017-04-26 19:30:23 +0530'
-title: A Tale of Bad Feedback & How a Feedback Wrap Made it Right
+title: A Tale of Bad Feedback & How a 'Feedback Wrap' Made it Right
 ---
 This blog post is about one of the instances where I messed up big time and then later made up for the same.  Let me start with the mess-up first.
 
