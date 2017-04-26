@@ -55,8 +55,7 @@ This one took a lot of time.  I wrote my observations in an excel sheet, one in 
 
 Because of this process, I was forced to think of any positive value-adds that person had done in this context.  To my surprise, I found quite a good number of them.  I had indeed been judgmental when I wrote my feedback earlier.  These positive value-adds did not feature in my earlier anonymous feedback.  No wonder that person thought I had a baseless feedback.
 
-
-
+![Screen Shot 2017-04-26 at 7.17.54 PM.png]({{site.baseurl}}/images/Screen Shot 2017-04-26 at 7.17.54 PM.png)
 
 After I listed down all the points, I sorted the rows using 'Value' column in descending order so that the highest value-add goes first.  I copy-pasted only the first two columns into my message.
 
