@@ -1,9 +1,10 @@
 ---
 layout: page
-excerpt: 'Vivek Ganesan - A Techie, A Teacher, a blah, blah and a Blah!'
+excerpt: 'Vivek Ganesan - A Techie, An Author, A Teacher, a blah, blah and a Blah!'
 tags:
   - Vivek
   - Ganesan
+  - Blameless Continuous Integration
   - Agile
   - Coach
   - CSM
