@@ -17,7 +17,7 @@ title: Who is Vivek?
 
 
 
-Vivek Ganesan, the [Time Person of the Year - 2006](https://en.wikipedia.org/wiki/You_(Time_Person_of_the_Year)), is the author of the book [Blameless Continuous Integration](https://www.amazon.com/dp/1482889633/ref=sr_1_1?s=books&ie=UTF8&qid=1493349176&sr=1-1) and a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and [writing](http://vivekganesan.com/posts/) about technology and agile software development and sometimes, singing in his bathroom.
+Vivek Ganesan is the author of the book [Blameless Continuous Integration](https://www.amazon.com/dp/1482889633/ref=sr_1_1?s=books&ie=UTF8&qid=1493349176&sr=1-1) and a secret 'super hero' who holds a full time job as a Servant Leader for awesome self-organizing teams at [Gainsight][], a Big Data Customer Success Start-up. He lives in Hyderabad and spends his leisure time envisioning and [writing](http://vivekganesan.com/posts/) about technology and agile software development and sometimes, singing in his bathroom.
 
 ![](/images/super_hero.png)
 
