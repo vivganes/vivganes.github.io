@@ -21,7 +21,7 @@ Vivek Ganesan is the author of the book [Blameless Continuous Integration](https
 
 ![](/images/super_hero.png)
 
-Vivek is an agile practitioner.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), [Business Agility Roadshow 2017](http://baroadshow.agilecoffeetalk.com/), [BizDevOps Master Webinar Series](https://www.youtube.com/watch?v=i4CpS14E7Eo&list=PLaM7bIEFx40uTfQFcSWA_wKd9uXvkFLDx&index=2), etc.
+Vivek is an agile practitioner.  He is a [Certified Agile Coach](https://icagile.com/Learning-Roadmap/Agile-Coaching/Agile-Coaching), [SAFe Agilist][], [Certified Scrum Professional][] (CSP), [Certified ScrumMaster][] (CSM), a learner and a public speaker too.  He spoke at [Agile India 2015](http://2015.agileindia.org/), [DevOps Conference - Bangalore](http://www.agileglobalevent.com/conference/devops/devops-conference-bangalore), [Discuss Agile Conferences](http://www.discussagile.com/), [XP Conference](http://xpconference.in/), [Business Agility Roadshow 2017](http://baroadshow.agilecoffeetalk.com/), [BizDevOps Master Webinar Series](https://www.youtube.com/watch?v=i4CpS14E7Eo&list=PLaM7bIEFx40uTfQFcSWA_wKd9uXvkFLDx&index=2), etc.
 
 Vivek is an [open-source enthusiast](https://github.com/vivganes/) and has contributed to open-source projects like [Mozilla.org][], [Hadoop][], [HBase][], [Karma][], etc.  He also authored some tutorials in the Community Tutorials section of [Hortonworks Sandbox][] VM.
 
