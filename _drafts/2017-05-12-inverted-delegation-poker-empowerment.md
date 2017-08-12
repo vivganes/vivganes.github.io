@@ -7,7 +7,7 @@ date: '2017-05-12 10:32:23 +0530'
 title: Attacking Empowerment Issues with Inverted Delegation Poker 
 ---
 
-## Issue of Empowerment
+## Issue of Empowerment - A Coaching Conversation
 
 Not long ago, I was coaching an excellent team of bright engineers.  Luckily for them, they reported to a manager, who was not into command and control - at least that was what I thought.  
 
@@ -54,7 +54,7 @@ I wanted to facilitate this activity using an information radiator that I could 
 - Team’s way of deciding (columns)
 - Manager’s way of deciding (further columns)
 
-My idea is to mark the team’s responses and the manager’s responses in the same row.  Closer their markings on the row, they agree more on the issue.  Farther their markings, they have a gap in communication.  In short, the distance between the team’s marking and the manager’s marking is literally the length of their communication gap.
+My idea is to mark the team’s responses and the manager’s responses in the same row.  If the two markings are symmetric, equally far from the middle line separating team's and the manager's responses, there is no communciation gap in that issue.  However, if the two markings are not symmetric, one closer to the middle line than the another, this is a communication gap and needs to be discussed and final state agreed upon.
 
 ## Step-3: Facilitation of exercise
 
