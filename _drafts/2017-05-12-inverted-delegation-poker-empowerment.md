@@ -46,6 +46,8 @@ This prompted me to facilitate the delegation poker exercise by including two ac
 
 The [official Delegation poker card deck](https://1qjpt15fhlq3xjfpm2utibj1-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/Delegation-Poker-2015-self-print-A4-English.pdf) is written from the point of view of a manager.  For example, in the level one, “I will tell them” assumes the voice of the manager.  When I play with the team members, the cards need to assume the voice of the team member.  So, I created an [inverted delegation poker deck](http://bit.ly/inv-delegation-poker) with the team member’s voice.
 
+![Inverted Delegation Poker]({{site.baseurl}}/images/inverted_delegation_poker.PNG)
+
 ## Step - 2: Designing an Information Radiator
 
 I wanted to facilitate this activity using an information radiator that I could project on a wall during the activity.  This [information radiator](http://bit.ly/inv-del-sheet) turned out to be a grid that consisted of the following items.
@@ -55,6 +57,8 @@ I wanted to facilitate this activity using an information radiator that I could 
 - Manager’s way of deciding (further columns)
 
 My idea is to mark the team’s responses and the manager’s responses in the same row.  If the two markings are symmetric, equally far from the middle line separating team's and the manager's responses, there is no communciation gap in that issue.  However, if the two markings are not symmetric, one closer to the middle line than the another, this is a communication gap and needs to be discussed and final state agreed upon.
+
+![Inverted Delegation Poker Grid]({{site.baseurl}}/images/inv_delegation_poker_grid.PNG)
 
 ## Step-3: Facilitation of exercise
 
