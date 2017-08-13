@@ -4,7 +4,8 @@ layout: post
 section-type: post
 comments: true
 date: '2017-05-12 10:32:23 +0530'
-title: Attacking Empowerment Issues with Inverted Delegation Poker 
+title: Attacking Empowerment Issues with Inverted Delegation Poker
+image: http://vivekganesan.com/images/inverted_delegation_poker.PNG
 ---
 
 ## Issue of Empowerment - A Coaching Conversation
