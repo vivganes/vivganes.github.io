@@ -1,3 +1,5 @@
+{% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
+
 ## Vivek's Conference Talks
 
 - Regional Scrum Gathering (India) 2017
