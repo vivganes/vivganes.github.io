@@ -6,7 +6,6 @@ comments: true
 date: '2017-08-26 12:23:21 +0530'
 title: "Minimum Viable Metrics for TDD and\_BDD"
 ---
-# Minimum Viable Metrics for TDD and BDD
 If you have recently started Test Driven Development and/or Behavior Driven Development and would like to know how you can improve or showcase the benefits to the management, you have reached the right place.
 
 This article is a deep-dive at three Minimum Viable Metrics (MVM — I invented this term :D )for the evaluation of TDD and BDD. This article will give you a list of metrics, how to measure them, how to use the metrics and most importantly, how not to use them, along with what an ideal observation looks like.
