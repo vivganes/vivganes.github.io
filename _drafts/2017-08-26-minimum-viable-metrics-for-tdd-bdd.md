@@ -78,6 +78,8 @@ Threshold achievement, with trend
 * Use this metric as a single-dip acid-test for the utility of your BDD practice. That’s all.
 * You can demonstrate this trended graph with decreasing thresholds to the management to show that you are reducing re-work costs.
 
+# Other Metrics
+
 The above 3 metrics are minimum viable metrics that directly link to the customer goal of reduced defects and developer goal of reduced rework. We could choose to track the following additional metrics to put more challenge on the system, or in case, the above metrics are not directly measurable because of a reason.
 * Lead time of bug resolution — Should reduce over a period of time
 * No. of extra scenarios identified in 3 amigos — Not equal to 0 — Acid test for meaningfulness of 3 Amigos meetings.
@@ -85,3 +87,5 @@ The above 3 metrics are minimum viable metrics that directly link to the custome
 * Total Build red time — Should reduce over a period of time but not in a linear way — becomes constant near zero — Checks responsiveness of team and utility of tests— If tests are good, build gets fixed easily. Else, it takes more time.
 * Code coverage — Helps in initial stages to check if the team is writing tests or not
 * Mutation Coverage — Checks if tests are meaningful. May not be possible in some technologies.
+
+Do you think these metrics are helpful? Have you used any other metrics in your environment that proved useful? Why not comment on this post to further the discussion?
