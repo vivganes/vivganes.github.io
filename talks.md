@@ -3,6 +3,7 @@
 ## Vivek's Conference Talks
 
 - Agile Gurugram 2018
+- Spark the Change India 2018
 - Discuss Agile Conference Bangalore 2017
 - Agile Deep Dive Conference Bangalore 2017
 - Regional Scrum Gathering (India) 2017
