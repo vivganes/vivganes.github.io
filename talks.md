@@ -3,6 +3,7 @@
 ## Vivek's Conference Talks
 
 - Agile Gurugram 2018
+- Accenture Liquid Delivery Day 2018 
 - Spark the Change India 2018
 - Business and Enterprise Agility Conference 2017 (BEACON)
 - Discuss Agile Conference Bangalore 2017
