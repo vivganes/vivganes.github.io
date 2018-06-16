@@ -2,6 +2,8 @@
 
 ## Vivek's Conference Talks
 
+- DevOps Days Moscow 2018
+- Agile & Automation Conclave 2018
 - Agile Gurugram 2018
 - Accenture Liquid Delivery Day 2018 
 - Spark the Change India 2018
