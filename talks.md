@@ -2,6 +2,7 @@
 
 ## Vivek's Conference Talks
 
+- Theme and Framework Agnostic Conference 2018
 - DevOps Days Moscow 2018
 - Agile & Automation Conclave 2018
 - Agile Gurugram 2018
