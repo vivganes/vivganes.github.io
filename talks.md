@@ -2,9 +2,10 @@
 
 ## Vivek's Conference Talks
 
+- Agile 2018 San Diego
 - Theme and Framework Agnostic Conference 2018
 - DevOps Days Moscow 2018
-- Agile & Automation Conclave 2018
+- Agile & Automation Conclave 2018 by Accenture
 - Agile Gurugram 2018
 - Accenture Liquid Delivery Day 2018 
 - Spark the Change India 2018
