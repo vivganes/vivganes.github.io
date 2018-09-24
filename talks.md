@@ -2,6 +2,7 @@
 
 ## Vivek's Conference Talks
 
+- Lean Kanban India 2018
 - Agile 2018 San Diego
 - Theme and Framework Agnostic Conference 2018
 - DevOps Days Moscow 2018
