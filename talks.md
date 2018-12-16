@@ -2,6 +2,8 @@
 
 ## Vivek's Conference Talks
 
+- Agile & DevOps Day (Accenture) 2018
+- Regional Scrum Gathering Nepal 2018
 - Lean Kanban India 2018
 - Agile 2018 San Diego
 - Theme and Framework Agnostic Conference 2018
