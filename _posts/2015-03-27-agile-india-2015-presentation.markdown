@@ -1,10 +1,11 @@
 ---
 layout: post
 section-type: post
-title: "Presentation for Vivek's session at Agile India 2015"
-date: 2015-03-27 12:00:00 +0530
+title: Presentation for Vivek's session at Agile India 2015
+date: '2015-03-27 12:00:00 +0530'
 comments: true
-categories: agile-life-cycle, scrum, learning, process, presentation
+categories: 'agile-life-cycle, scrum, learning, process, presentation'
+published: false
 ---
 I prepared an awesome presentation for my talk at Agile India 2015.  The session title is '**Congratulations! You are our Startup's First Scrum Master! What's next?**'
 
