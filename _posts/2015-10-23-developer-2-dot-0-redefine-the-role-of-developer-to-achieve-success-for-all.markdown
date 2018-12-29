@@ -1,10 +1,11 @@
 ---
 layout: post
 section-type: post
-title: "Developer 2.0 - Redefine the Role of Developer to Achieve Success for All"
-date: 2015-10-23 17:37:48 +0530
+title: Developer 2.0 - Redefine the Role of Developer to Achieve Success for All
+date: '2015-10-23 17:37:48 +0530'
 comments: true
-categories: 
+categories: null
+published: false
 ---
 
 Some time ago, I delivered a webinar on how we can redefine the role of developer to achieve success for all in your organization. 
