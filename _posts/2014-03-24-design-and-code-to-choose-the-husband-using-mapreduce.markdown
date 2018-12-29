@@ -6,7 +6,7 @@ date: '2014-03-24 10:37:57 +0530'
 comments: true
 tags:
   - hadoop mapreduce java
-published: true
+published: false
 ---
 In the last blog post "[What is MapReduce? - An Exercise using Activity Based Learning](http://vivekganesan.com/what-is-mapreduce-an-exercise-using-activity-based-learning//)", the methodology of MapReduce was explained.  In this blog post, let me take it a step further.  Let us do the technical design and Java coding for the same problem "Choosing the Husband" explained in the previous blog post.
 
