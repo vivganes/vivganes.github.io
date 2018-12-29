@@ -5,7 +5,7 @@ title: What is MapReduce? - An Exercise using Activity Based Learning
 date: '2014-03-22 18:17:23 +0530'
 comments: true
 categories: hadoop mapreduce teaching
-published: true
+published: false
 ---
 Whenever I have the chance to explain somebody the process of MapReduce, I find it demoralising that "Word Count" is the only example found on almost all places in the internet.  I could not recommend any reading material which gives them more insight than a simple word count.  Yet, something good came out of this problem.  I was forced to think of a simple-enough-scenario to apply MapReduce and write a blog post about it.  And, here I am, writing a blog post titled "What is MapReduce?".
 
