@@ -4,8 +4,10 @@
   url: /
 
 - title: Blog
-  url: /posts/
-  
+  url: https://medium.com/@VivekGanesan
   
 - title: Talks
   url: /talks/
+  
+- title: Download Resume
+  url: /Agile_Technical_DevOps_Coach_Vivek_Ganesan_Consultant.pdf
