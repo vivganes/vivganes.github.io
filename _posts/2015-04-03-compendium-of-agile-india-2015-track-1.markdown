@@ -1,10 +1,11 @@
 ---
 layout: post
 section-type: post
-title: "Agile India 2015 - Scaling Agile Adoption - A Compendium"
-date: 2015-03-29 10:23:33 +0530
+title: Agile India 2015 - Scaling Agile Adoption - A Compendium
+date: '2015-03-29 10:23:33 +0530'
 comments: true
 categories: agile-adoption scrum process
+published: false
 ---
 Ever heard of an eye-opener?  Ever experienced it?  I just had one recently.  And, that eye-opener lasted for full 4 days!  I am talking about an [Agile India 2015](http://2015.agileindia.org/) - An agile conference that I attended over the past 4 days.  The first two days were dedicated to the track "Scaling Agile Adoption" and the next two days were for "Agile Life Cycle"
 
