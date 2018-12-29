@@ -1,10 +1,11 @@
 ---
 layout: post
 section-type: post
-title: "Agile India 2015 - Agile Life Cycle - A Compendium"
-date: 2015-03-29 10:23:33 +0530
+title: Agile India 2015 - Agile Life Cycle - A Compendium
+date: '2015-03-29 10:23:33 +0530'
 comments: true
 categories: agile-life-cycle scrum learning process
+published: false
 ---
 After the [first two days](http://vivekganesan.com/blog/2015/03/29/compendium-of-agile-india-2015-track-1/) of Agile India 2015 - Scaling Agile Adoption track, it was finally the time to learn about Agile Life Cycle.  This blog post aims to create a compendium of my learnings from the Agile Life Cycle track of the conference.
 
