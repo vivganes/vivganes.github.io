@@ -2,6 +2,7 @@
 
 ## Vivek's Conference Talks
 
+- Agile Gurugram 2019
 - Agile & DevOps Day (Accenture) 2018
 - Regional Scrum Gathering Nepal 2018
 - Lean Kanban India 2018
