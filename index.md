@@ -16,13 +16,14 @@ tags:
   - Management 3.0
   - Big Data
   - Hadoop
+  - Ampyard
 published: true
 title: Who is Vivek?
 ---
 
 
 
-Vivek Ganesan is the author of the book [Blameless Continuous Integration](https://www.amazon.com/dp/1482889633/ref=sr_1_1?s=books&ie=UTF8&qid=1493349176&sr=1-1) and a secret 'super hero'. He helps organizations, teams and individuals to be better and happier than they are, using his Technical Agility, Process Agility and DevOps coaching skills. He lives in India and spends his leisure time envisioning and [writing](https://medium.com/@VivekGanesan) about technology and agile software development and sometimes, [singing](https://soundcloud.com/vivek-ganesan/tracks) in his bathroom.
+Vivek Ganesan is the author of the book [Blameless Continuous Integration](https://www.amazon.com/dp/1482889633/ref=sr_1_1?s=books&ie=UTF8&qid=1493349176&sr=1-1) and a secret 'super hero' at [Ampyard](https://www.ampyard.com). He helps organizations, teams and individuals to be better and happier than they are, using his Technical Agility, Process Agility and DevOps coaching skills. He lives in India and spends his leisure time envisioning and [writing](https://medium.com/@VivekGanesan) about technology and agile software development and sometimes, [singing](https://soundcloud.com/vivek-ganesan/tracks) in his bathroom.
 
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 -
