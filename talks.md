@@ -1,6 +1,8 @@
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 
 ## Vivek's Conference Talks
+- Technical Agility Conference 2019
+- Theme & Framework Agnostic Conference 2019
 - XP 2019 Montreal
 - Regional Scrum Gathering India 2019
 - World DevOps Summit 2019
