@@ -1,11 +1,15 @@
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 
 ## Vivek's Conference Talks
+- Regional Scrum Gathering Hyderabad 2020
+- Technical Agility Conference 2020
 - Agile Gurugram 2020
 - Regional Scrum Gathering Dhaka 2019
 - Regional Scrum Gathering Nepal 2019
 - Technical Agility Conference 2019
 - Theme & Framework Agnostic Conference 2019
+- Regional Scrum Gathering Dhaka 2019
+- Regional Scrum Gathering Nepal 2019
 - XP 2019 Montreal
 - Regional Scrum Gathering India 2019
 - World DevOps Summit 2019
