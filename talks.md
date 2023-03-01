@@ -10,6 +10,12 @@ title: "Vivek's Talks"
 
 ---
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
+
+
+### 2022
+- [Game of Testing 2022](https://www.youtube.com/watch?v=NjHrxlatrAI)
+- [Agile NCR 2022](https://youtu.be/IkjkvVkVXYg)
+
 ### 2021
 - Agile India 2021
 - Technical Agility Conference 2021
