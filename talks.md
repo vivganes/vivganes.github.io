@@ -12,9 +12,9 @@ title: "Vivek's Talks"
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 
 ### 2022
-- [Agile NCR 2022](https://youtu.be/IkjkvVkVXYg)
-- [Agilists Unlearning Series](https://www.youtube.com/watch?v=FZpqAmBs4oQ)
-- [Game of Testing 2022](https://www.youtube.com/watch?v=NjHrxlatrAI)
+- [Agile NCR 2022](https://youtu.be/IkjkvVkVXYg){:target="_blank"}
+- [Agilists Unlearning Series](https://www.youtube.com/watch?v=FZpqAmBs4oQ){:target="_blank"}
+- [Game of Testing 2022](https://www.youtube.com/watch?v=NjHrxlatrAI){:target="_blank"}
 
 ### 2021
 - Agile India 2021
