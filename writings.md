@@ -15,6 +15,8 @@ title: "Vivek's Writings"
 
 <iframe type="text/html" width="250" height="418" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0925X6HHX&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_B87WQ91SZCCYRY83VKW8" ></iframe>
 
+<iframe type="text/html" width="250" height="418" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.in/kp/embed?asin=B0BDXJ1NGZ&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_X1MTRZ0TC0QX4Q1E8YNM" ></iframe>
+
 ### Articles
 
 <div id="medium-widget"></div>
