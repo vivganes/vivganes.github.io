@@ -11,6 +11,10 @@ title: "Vivek's Talks"
 ---
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 
+### 2023
+- Agility Today - Agile Engineering Lab
+- XACT Technical Agility Meetup Bengaluru
+
 ### 2022
 - [Agile NCR 2022](https://youtu.be/IkjkvVkVXYg){:target="_blank"}
 - [Agilists Unlearning Series](https://www.youtube.com/watch?v=FZpqAmBs4oQ){:target="_blank"}
