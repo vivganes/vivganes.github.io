@@ -11,6 +11,10 @@ title: "Vivek's Talks"
 ---
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 
+### 2024
+- Agility Today - Gurugram - Generative AI in Agility
+- Agility Today - Hyderabad - Generative AI in Agility
+
 ### 2023
 - Agility Today - Agile Engineering Lab
 - XACT Technical Agility Meetup Bengaluru
