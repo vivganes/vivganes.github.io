@@ -79,4 +79,7 @@ title: "Vivek's Talks"
 - Discuss Agile Day Hyderabad 2015
 - Discuss Agile Conference Delhi  2015
 - Agile India 2015
-- Featured Speaker at JavaOne India, 2013
+
+### 2013
+- Featured Speaker at Hyderabad Data Science Group Meetup
+- [Featured Speaker at JavaOne India, 2013](https://www.slideshare.net/caliberoviv/demystifying-websockets-build-a-cool-real-time-multiplayer-game-with-java-ee){:target="_blank"}
