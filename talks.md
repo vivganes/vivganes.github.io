@@ -21,7 +21,9 @@ title: "Vivek's Talks"
 
 ### 2022
 - [Agile NCR 2022](https://youtu.be/IkjkvVkVXYg){:target="_blank"}
+- [Happy hour of coaching](https://www.youtube.com/watch?v=ZMUs-LEDJA8){:target="_blank"} by Pune Agile Thought Leaders
 - [Agilists Unlearning Series](https://www.youtube.com/watch?v=FZpqAmBs4oQ){:target="_blank"}
+- Digital Agility Institue
 - [Game of Testing 2022](https://www.youtube.com/watch?v=NjHrxlatrAI){:target="_blank"}
 
 ### 2021
@@ -30,7 +32,7 @@ title: "Vivek's Talks"
 
 ### 2020
 - Regional Scrum Gathering Hyderabad 2020
-- Technical Agility Conference 2020
+- [Technical Agility Conference 2020](https://www.youtube.com/watch?v=yJJgNMwFTow)
 - Agile Gurugram 2020
 
 ### 2019
@@ -53,7 +55,7 @@ title: "Vivek's Talks"
 - Theme and Framework Agnostic Conference 2018
 - DevOps Days Moscow 2018
 - Agile & Automation Conclave 2018
-- Agile Gurugram 2018
+- [Agile Gurugram 2018](https://twitter.com/PingalaSoftware/status/978166142672896000){:target="_blank"}
 - Accenture Liquid Delivery Day 2018 
 - Spark the Change India 2018
 
@@ -82,4 +84,4 @@ title: "Vivek's Talks"
 
 ### 2013
 - Featured Speaker at Hyderabad Data Science Group Meetup
-- [Featured Speaker at JavaOne India, 2013](https://www.slideshare.net/caliberoviv/demystifying-websockets-build-a-cool-real-time-multiplayer-game-with-java-ee){:target="_blank"}
+- [Featured Speaker at JavaOne India, 2013](https://web.archive.org/web/20131006013414/http://www.oracle.com/javaone/in-en/program/javaone-india-speakers-1931748.html#ganesan){:target="_blank"}
