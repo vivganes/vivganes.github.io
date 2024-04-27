@@ -52,7 +52,7 @@ title: "Vivek's Talks"
 
 ### 2018
 - Agile & DevOps Day (Accenture) 2018
-- [Regional Scrum Gathering Nepal 2018])https://www.youtube.com/watch?v=IJnpZ7NlrX8&t=2388s){:target="_blank"}
+- [Regional Scrum Gathering Nepal 2018](https://www.youtube.com/watch?v=IJnpZ7NlrX8&t=2388s){:target="_blank"}
 - Lean Kanban India 2018
 - Agile 2018 San Diego
 - [Theme and Framework Agnostic Conference 2018](https://www.linkedin.com/feed/update/urn:li:activity:6553174039710523392/){:target="_blank"}
