@@ -12,8 +12,10 @@ title: "Vivek's Talks"
 {% include youtubePlayer.html id='PLtQT0a2cx00ZLO9sclfoWeoeE4JyWtCtD' %}
 
 ### 2024
-- Agility Today - Gurugram - Generative AI in Agility
-- Agility Today - Hyderabad - Generative AI in Agility
+- Regional Scrum Gathering 2024
+- Entrepreneur Guest Talk at Dayananda Sagar University, Bengaluru
+- Agility Today - Gurugram
+- Agility Today - Hyderabad
 - Agility Today - Bangalore
 - Regional Scrum Gathering Bangalore
 
